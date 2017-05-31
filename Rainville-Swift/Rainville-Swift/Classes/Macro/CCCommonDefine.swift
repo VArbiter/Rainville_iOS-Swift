@@ -14,19 +14,19 @@ let _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_ = "CC_APP_DID_RECEIVE_REMOTE_NOTIFI
 typealias CCCommonClosure = (Bool , Any) -> Void ;
 //typealias CCCommonClosure = (Bool , Any) ;
 
-typealias NULL = Optional.none!;
+let NULL = Optional<Any>.none!;
 
-public func CCLog <T> (stringMessage : T ,
+public func CCLog <T> (string : T ,
                    stringFileName : String = #file ,
                    stringFunction : String = #function ,
                    integerLine : Int = #line) -> Void {
     #if DEBUG
-        print("_CC_LOG_ \n\(stringFileName) \n\(stringFunction) \n\(integerLine) \n\(stringMessage)");
+        print("_CC_LOG_ \n\(stringFileName) \n\(stringFunction) \n\(integerLine) \n\(string)");
     #endif
 }
 
-public func ccStringFormat<T>(stringFormat : T) -> String {
-    return String.init(format: "%@", stringFormat as! CVarArg);
+public func ccStringFormat<T>(string : T) -> String {
+    return String.init(format: "%@", string as! CVarArg);
 }
 
 public func ccScreenWidth() -> Double {

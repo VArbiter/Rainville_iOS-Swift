@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        CCLog(stringMessage: NSHomeDirectory());
+        CCLog(string: NSHomeDirectory());
         
         self.window = UIWindow.init();
         self.window?.frame = UIScreen.main.bounds;

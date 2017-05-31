@@ -31,7 +31,7 @@ class CCBaseViewController: UIViewController {
     }
     
     deinit {
-        CCLog(stringMessage: "_CC_\(self.ccStringEntityControllerName())_DELLOC_");
+        CCLog(string: "_CC_\(self.ccStringEntityControllerName())_DELLOC_");
     }
     
 }
