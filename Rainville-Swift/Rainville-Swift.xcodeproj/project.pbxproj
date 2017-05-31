@@ -38,6 +38,7 @@
 		370E98CC1EDEAD7B007E2692 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B31EDEAD7B007E2692 /* InfoPlist.strings */; };
 		370E98CD1EDEAD7B007E2692 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B51EDEAD7B007E2692 /* Localizable.strings */; };
 		370E98CF1EDEADBB007E2692 /* CCLocalizedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */; };
+		370E98D21EDEB411007E2692 /* CCAudioPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98D11EDEB411007E2692 /* CCAudioPreset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		370E98B91EDEAD7B007E2692 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		370E98BA1EDEAD7B007E2692 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCLocalizedHelper.swift; sourceTree = "<group>"; };
+		370E98D11EDEB411007E2692 /* CCAudioPreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAudioPreset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */,
+				370E98D11EDEB411007E2692 /* CCAudioPreset.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				370E988F1EDE9802007E2692 /* CCObjectExtension.swift in Sources */,
 				370E988B1EDE83F1007E2692 /* CCCommonDefine.swift in Sources */,
 				370E98951EDE9C2D007E2692 /* CCArrayExtension.swift in Sources */,
+				370E98D21EDEB411007E2692 /* CCAudioPreset.swift in Sources */,
 				370E98811EDE744A007E2692 /* AppDelegate.swift in Sources */,
 				370E98CF1EDEADBB007E2692 /* CCLocalizedHelper.swift in Sources */,
 				370E98911EDE9BE5007E2692 /* CCStringExtension.swift in Sources */,
