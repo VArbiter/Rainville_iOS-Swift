@@ -18,6 +18,26 @@
 		370E98951EDE9C2D007E2692 /* CCArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98941EDE9C2D007E2692 /* CCArrayExtension.swift */; };
 		370E989C1EDEA7C7007E2692 /* CCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98991EDEA7C7007E2692 /* CCMainViewController.swift */; };
 		370E989D1EDEA7C7007E2692 /* CCMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 370E989A1EDEA7C7007E2692 /* CCMainViewController.xib */; };
+		370E98BB1EDEAD7B007E2692 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 370E989F1EDEAD7A007E2692 /* Default-568h@2x.png */; };
+		370E98BC1EDEAD7B007E2692 /* elegant.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 370E98A01EDEAD7A007E2692 /* elegant.ttf */; };
+		370E98BD1EDEAD7B007E2692 /* ic_launcher_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 370E98A11EDEAD7A007E2692 /* ic_launcher_144.png */; };
+		370E98BE1EDEAD7B007E2692 /* weather.otf in Resources */ = {isa = PBXBuildFile; fileRef = 370E98A21EDEAD7A007E2692 /* weather.otf */; };
+		370E98BF1EDEAD7B007E2692 /* Musket regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 370E98A41EDEAD7B007E2692 /* Musket regular.otf */; };
+		370E98C01EDEAD7B007E2692 /* _0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98A61EDEAD7B007E2692 /* _0.wav */; };
+		370E98C11EDEAD7B007E2692 /* _1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98A71EDEAD7B007E2692 /* _1.wav */; };
+		370E98C21EDEAD7B007E2692 /* _2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98A81EDEAD7B007E2692 /* _2.wav */; };
+		370E98C31EDEAD7B007E2692 /* _3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98A91EDEAD7B007E2692 /* _3.wav */; };
+		370E98C41EDEAD7B007E2692 /* _4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98AA1EDEAD7B007E2692 /* _4.wav */; };
+		370E98C51EDEAD7B007E2692 /* _5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98AB1EDEAD7B007E2692 /* _5.wav */; };
+		370E98C61EDEAD7B007E2692 /* _6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98AC1EDEAD7B007E2692 /* _6.wav */; };
+		370E98C71EDEAD7B007E2692 /* _7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98AD1EDEAD7B007E2692 /* _7.wav */; };
+		370E98C81EDEAD7B007E2692 /* _8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98AE1EDEAD7B007E2692 /* _8.wav */; };
+		370E98C91EDEAD7B007E2692 /* _9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98AF1EDEAD7B007E2692 /* _9.wav */; };
+		370E98CA1EDEAD7B007E2692 /* ArrayItem_CH.plist in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B11EDEAD7B007E2692 /* ArrayItem_CH.plist */; };
+		370E98CB1EDEAD7B007E2692 /* ArrayItem_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B21EDEAD7B007E2692 /* ArrayItem_EN.plist */; };
+		370E98CC1EDEAD7B007E2692 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B31EDEAD7B007E2692 /* InfoPlist.strings */; };
+		370E98CD1EDEAD7B007E2692 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B51EDEAD7B007E2692 /* Localizable.strings */; };
+		370E98CF1EDEADBB007E2692 /* CCLocalizedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +54,30 @@
 		370E98941EDE9C2D007E2692 /* CCArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCArrayExtension.swift; sourceTree = "<group>"; };
 		370E98991EDEA7C7007E2692 /* CCMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainViewController.swift; sourceTree = "<group>"; };
 		370E989A1EDEA7C7007E2692 /* CCMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMainViewController.xib; sourceTree = "<group>"; };
+		370E989F1EDEAD7A007E2692 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		370E98A01EDEAD7A007E2692 /* elegant.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = elegant.ttf; sourceTree = "<group>"; };
+		370E98A11EDEAD7A007E2692 /* ic_launcher_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher_144.png; sourceTree = "<group>"; };
+		370E98A21EDEAD7A007E2692 /* weather.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = weather.otf; sourceTree = "<group>"; };
+		370E98A41EDEAD7B007E2692 /* Musket regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Musket regular.otf"; sourceTree = "<group>"; };
+		370E98A61EDEAD7B007E2692 /* _0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _0.wav; sourceTree = "<group>"; };
+		370E98A71EDEAD7B007E2692 /* _1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _1.wav; sourceTree = "<group>"; };
+		370E98A81EDEAD7B007E2692 /* _2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _2.wav; sourceTree = "<group>"; };
+		370E98A91EDEAD7B007E2692 /* _3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _3.wav; sourceTree = "<group>"; };
+		370E98AA1EDEAD7B007E2692 /* _4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _4.wav; sourceTree = "<group>"; };
+		370E98AB1EDEAD7B007E2692 /* _5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _5.wav; sourceTree = "<group>"; };
+		370E98AC1EDEAD7B007E2692 /* _6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _6.wav; sourceTree = "<group>"; };
+		370E98AD1EDEAD7B007E2692 /* _7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _7.wav; sourceTree = "<group>"; };
+		370E98AE1EDEAD7B007E2692 /* _8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _8.wav; sourceTree = "<group>"; };
+		370E98AF1EDEAD7B007E2692 /* _9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = _9.wav; sourceTree = "<group>"; };
+		370E98B11EDEAD7B007E2692 /* ArrayItem_CH.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ArrayItem_CH.plist; sourceTree = "<group>"; };
+		370E98B21EDEAD7B007E2692 /* ArrayItem_EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ArrayItem_EN.plist; sourceTree = "<group>"; };
+		370E98B41EDEAD7B007E2692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		370E98B61EDEAD7B007E2692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		370E98B71EDEAD7B007E2692 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		370E98B81EDEAD7B007E2692 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		370E98B91EDEAD7B007E2692 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		370E98BA1EDEAD7B007E2692 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCLocalizedHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +178,10 @@
 		370E987F1EDE744A007E2692 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				370E989E1EDEAD7A007E2692 /* Icons */,
+				370E98A31EDEAD7B007E2692 /* Musket */,
+				370E98A51EDEAD7B007E2692 /* RAW */,
+				370E98B01EDEAD7B007E2692 /* Strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -167,8 +215,56 @@
 		370E989B1EDEA7C7007E2692 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		370E989E1EDEAD7A007E2692 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				370E989F1EDEAD7A007E2692 /* Default-568h@2x.png */,
+				370E98A01EDEAD7A007E2692 /* elegant.ttf */,
+				370E98A11EDEAD7A007E2692 /* ic_launcher_144.png */,
+				370E98A21EDEAD7A007E2692 /* weather.otf */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		370E98A31EDEAD7B007E2692 /* Musket */ = {
+			isa = PBXGroup;
+			children = (
+				370E98A41EDEAD7B007E2692 /* Musket regular.otf */,
+			);
+			path = Musket;
+			sourceTree = "<group>";
+		};
+		370E98A51EDEAD7B007E2692 /* RAW */ = {
+			isa = PBXGroup;
+			children = (
+				370E98A61EDEAD7B007E2692 /* _0.wav */,
+				370E98A71EDEAD7B007E2692 /* _1.wav */,
+				370E98A81EDEAD7B007E2692 /* _2.wav */,
+				370E98A91EDEAD7B007E2692 /* _3.wav */,
+				370E98AA1EDEAD7B007E2692 /* _4.wav */,
+				370E98AB1EDEAD7B007E2692 /* _5.wav */,
+				370E98AC1EDEAD7B007E2692 /* _6.wav */,
+				370E98AD1EDEAD7B007E2692 /* _7.wav */,
+				370E98AE1EDEAD7B007E2692 /* _8.wav */,
+				370E98AF1EDEAD7B007E2692 /* _9.wav */,
+			);
+			path = RAW;
+			sourceTree = "<group>";
+		};
+		370E98B01EDEAD7B007E2692 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				370E98B11EDEAD7B007E2692 /* ArrayItem_CH.plist */,
+				370E98B21EDEAD7B007E2692 /* ArrayItem_EN.plist */,
+				370E98B31EDEAD7B007E2692 /* InfoPlist.strings */,
+				370E98B51EDEAD7B007E2692 /* Localizable.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +311,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 370E985A1EDE738C007E2692;
 			productRefGroup = 370E98641EDE738C007E2692 /* Products */;
@@ -231,8 +328,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370E98C41EDEAD7B007E2692 /* _4.wav in Resources */,
+				370E98CC1EDEAD7B007E2692 /* InfoPlist.strings in Resources */,
+				370E98C11EDEAD7B007E2692 /* _1.wav in Resources */,
 				370E989D1EDEA7C7007E2692 /* CCMainViewController.xib in Resources */,
+				370E98BD1EDEAD7B007E2692 /* ic_launcher_144.png in Resources */,
+				370E98CB1EDEAD7B007E2692 /* ArrayItem_EN.plist in Resources */,
+				370E98BB1EDEAD7B007E2692 /* Default-568h@2x.png in Resources */,
+				370E98C31EDEAD7B007E2692 /* _3.wav in Resources */,
+				370E98BE1EDEAD7B007E2692 /* weather.otf in Resources */,
+				370E98BF1EDEAD7B007E2692 /* Musket regular.otf in Resources */,
+				370E98CA1EDEAD7B007E2692 /* ArrayItem_CH.plist in Resources */,
+				370E98C71EDEAD7B007E2692 /* _7.wav in Resources */,
+				370E98C51EDEAD7B007E2692 /* _5.wav in Resources */,
+				370E98CD1EDEAD7B007E2692 /* Localizable.strings in Resources */,
 				370E98711EDE738C007E2692 /* LaunchScreen.storyboard in Resources */,
+				370E98C61EDEAD7B007E2692 /* _6.wav in Resources */,
+				370E98BC1EDEAD7B007E2692 /* elegant.ttf in Resources */,
+				370E98C21EDEAD7B007E2692 /* _2.wav in Resources */,
+				370E98C01EDEAD7B007E2692 /* _0.wav in Resources */,
+				370E98C81EDEAD7B007E2692 /* _8.wav in Resources */,
+				370E98C91EDEAD7B007E2692 /* _9.wav in Resources */,
 				370E986E1EDE738C007E2692 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +364,7 @@
 				370E988B1EDE83F1007E2692 /* CCCommonDefine.swift in Sources */,
 				370E98951EDE9C2D007E2692 /* CCArrayExtension.swift in Sources */,
 				370E98811EDE744A007E2692 /* AppDelegate.swift in Sources */,
+				370E98CF1EDEADBB007E2692 /* CCLocalizedHelper.swift in Sources */,
 				370E98911EDE9BE5007E2692 /* CCStringExtension.swift in Sources */,
 				370E98831EDE74B7007E2692 /* CCBaseViewController.swift in Sources */,
 				370E98931EDE9C22007E2692 /* CCDictionaryExtension.swift in Sources */,
@@ -264,6 +381,26 @@
 				370E98701EDE738C007E2692 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		370E98B31EDEAD7B007E2692 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				370E98B41EDEAD7B007E2692 /* Base */,
+				370E98B71EDEAD7B007E2692 /* en */,
+				370E98B91EDEAD7B007E2692 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		370E98B51EDEAD7B007E2692 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				370E98B61EDEAD7B007E2692 /* Base */,
+				370E98B81EDEAD7B007E2692 /* en */,
+				370E98BA1EDEAD7B007E2692 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

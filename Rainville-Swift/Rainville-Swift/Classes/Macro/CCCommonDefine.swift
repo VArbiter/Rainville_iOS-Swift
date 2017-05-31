@@ -14,6 +14,8 @@ let _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_ = "CC_APP_DID_RECEIVE_REMOTE_NOTIFI
 typealias CCCommonClosure = (Bool , Any) -> Void ;
 //typealias CCCommonClosure = (Bool , Any) ;
 
+typealias NULL = Optional.none!;
+
 public func CCLog <T> (stringMessage : T ,
                    stringFileName : String = #file ,
                    stringFunction : String = #function ,
@@ -75,7 +77,7 @@ public func ccImageWithCache(string : String , isCache : Bool) -> UIImage {
     return UIImage.init(contentsOfFile: string)!;
 }
 
-public func ccSafeUIClosure(closureNil : Any , closure : @escaping () -> Void) -> Void {
+public func CC_Safe_UI_Closure(closureNil : Any , closure : @escaping () -> Void) -> Void {
     if (closureNil == Optional.none!
         || closure == Optional.none!) {
         return ;
@@ -89,6 +91,10 @@ public func ccSafeUIClosure(closureNil : Any , closure : @escaping () -> Void) -
             closure();
         }
     }
+}
+
+public func ccLocalizeString(string : String , _ : String) -> String {
+    return NSLocalizedString(string, comment: Optional.none!);
 }
 
 public struct CCCommonDefine {
