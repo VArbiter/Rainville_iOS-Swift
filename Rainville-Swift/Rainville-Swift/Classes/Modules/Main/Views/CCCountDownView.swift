@@ -14,7 +14,7 @@ protocol CCCountDownDelegate {
 
 class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
     
-    var delegate : CCCountDownDelegate? ;
+    var delegate : CCCountDownDelegate? ; // nil 不调用 , 反之调用
     
     @IBOutlet private weak var pickerViewTime: UIPickerView!
     @IBOutlet private weak var labelLeft: UILabel!
@@ -22,11 +22,13 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
     
     private var array : Array<Int>!;
     
-    public func initFromNib() -> CCCountDownView {
-        let viewCountDown : CCCountDownView = Bundle.main.loadNibNamed(NSStringFromClass(CCCountDownView.self), owner: nil, options: nil)?.first as! CCCountDownView;
-        viewCountDown.frame = CGRect(x: ccScreenWidth(), y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
-        viewCountDown.ccDefaultSettings();
-        return viewCountDown;
+    public class func initFromNib() -> CCCountDownView {
+        let viewCountDown : CCCountDownView? = Bundle.main.loadNibNamed(NSStringFromClass(CCCountDownView.self), owner: nil, options: nil)?.first as? CCCountDownView;
+        if viewCountDown != nil {            
+            viewCountDown?.frame = CGRect(x: ccScreenWidth(), y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
+            viewCountDown?.ccDefaultSettings();
+        }
+        return viewCountDown!;
     }
     public func ccEnableCountingDown(bool : Bool) -> Void {
         self.pickerViewTime.alpha = bool ? 1.0 : 0.8;

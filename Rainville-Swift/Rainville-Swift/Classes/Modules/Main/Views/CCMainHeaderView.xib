@@ -45,7 +45,7 @@
                         <color key="titleColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="ccButtonPlayPauseActon:" destination="iN0-l3-epB" eventType="touchUpInside" id="c6p-EB-2sW"/>
+                        <action selector="ccButtonPlayPauseAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="2CN-qs-yo2"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syT-IN-fVb">
@@ -100,14 +100,14 @@
                 <constraint firstAttribute="trailing" secondItem="0QP-BT-ssL" secondAttribute="trailing" id="zT0-bl-yCZ"/>
             </constraints>
             <connections>
-                <outlet property="buttonPlayPause" destination="9R5-Gr-snf" id="R3f-bX-22M"/>
-                <outlet property="labelAppName" destination="mcl-Nr-75r" id="H6q-eP-o3I"/>
-                <outlet property="labelCountingDown" destination="f9R-x8-F3M" id="8vA-nP-wTY"/>
-                <outlet property="labelDesc" destination="syT-IN-fVb" id="I6K-qh-SJh"/>
-                <outlet property="labelIcon" destination="IJM-V8-1aT" id="3k9-y0-470"/>
-                <outlet property="labelUpDown" destination="Z2f-qV-7Oi" id="hR4-6g-Gwg"/>
-                <outlet property="viewBackGround" destination="0QP-BT-ssL" id="yux-cr-z8H"/>
-                <outlet property="viewLightLine" destination="IAE-4b-ByQ" id="vd4-7W-DCf"/>
+                <outlet property="buttonPlayPause" destination="9R5-Gr-snf" id="Tud-oB-YWH"/>
+                <outlet property="labelAppName" destination="mcl-Nr-75r" id="ZwT-p9-8UG"/>
+                <outlet property="labelCountDown" destination="f9R-x8-F3M" id="jZD-6Z-RCm"/>
+                <outlet property="labelDesc" destination="syT-IN-fVb" id="97l-lB-5bj"/>
+                <outlet property="labelIcon" destination="IJM-V8-1aT" id="mLm-sH-8fV"/>
+                <outlet property="labelUpDown" destination="Z2f-qV-7Oi" id="iPD-Rm-w4e"/>
+                <outlet property="viewBackground" destination="0QP-BT-ssL" id="Dgs-sx-cWV"/>
+                <outlet property="viewLightLine" destination="IAE-4b-ByQ" id="VHe-lr-UN3"/>
             </connections>
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>

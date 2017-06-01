@@ -17,11 +17,13 @@ class CCAuthorInfoView: UIView {
     @IBOutlet private weak var buttonEmail: UIButton!
     
     
-    public func initFromNib() -> CCAuthorInfoView {
-        let infoView : CCAuthorInfoView = Bundle.main.loadNibNamed(NSStringFromClass(CCAuthorInfoView.self), owner: nil, options: nil)?.first as! CCAuthorInfoView;
-        infoView.frame = CGRect(x: ccScreenWidth() * 2.0, y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
-        infoView.ccDefaultSettings();
-        return infoView;
+    public class func initFromNib() -> CCAuthorInfoView {
+        let infoView : CCAuthorInfoView? = Bundle.main.loadNibNamed(NSStringFromClass(CCAuthorInfoView.self), owner: nil, options: nil)?.first as? CCAuthorInfoView;
+        if infoView != nil { 
+            infoView?.frame = CGRect(x: ccScreenWidth() * 2.0, y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
+            infoView?.ccDefaultSettings();
+        }
+        return infoView!;
     }
     
     private func ccDefaultSettings() -> Void {
@@ -47,7 +49,7 @@ class CCAuthorInfoView: UIView {
         self.imageViewIcon.layer.add(animation, forKey: nil);
     }
     
-    @IBAction func ccButtonLinkAction(_ sender: UIButton) {
+    @IBAction private func ccButtonLinkAction(_ sender: UIButton) {
         let url : URL = ccURL(string: "https://github.com/VArbiter", isFile: false);
         if #available(iOS 10, *) {
             if UIApplication.shared.canOpenURL(url) {
@@ -62,7 +64,7 @@ class CCAuthorInfoView: UIView {
         }
     }
 
-    @IBAction func ccButtonEmailAction(_ sender: UIButton) {
+    @IBAction private func ccButtonEmailAction(_ sender: UIButton) {
         //TODO: EMAIL
     }
     
