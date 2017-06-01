@@ -39,6 +39,11 @@
 		370E98CD1EDEAD7B007E2692 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B51EDEAD7B007E2692 /* Localizable.strings */; };
 		370E98CF1EDEADBB007E2692 /* CCLocalizedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */; };
 		370E98D21EDEB411007E2692 /* CCAudioPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98D11EDEB411007E2692 /* CCAudioPreset.swift */; };
+		3729CC041EDFA2B70050BD95 /* CCPickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC031EDFA2B70050BD95 /* CCPickerViewExtension.swift */; };
+		3729CC061EDFA4C40050BD95 /* CCViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC051EDFA4C40050BD95 /* CCViewExtension.swift */; };
+		3729CC091EDFB4D20050BD95 /* CCFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC081EDFB4D20050BD95 /* CCFontExtension.swift */; };
+		3729CC0C1EDFBBE10050BD95 /* CCLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC0B1EDFBBE10050BD95 /* CCLabelExtension.swift */; };
+		3729CC0E1EDFBED30050BD95 /* CCMainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC0D1EDFBED30050BD95 /* CCMainHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +85,11 @@
 		370E98BA1EDEAD7B007E2692 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCLocalizedHelper.swift; sourceTree = "<group>"; };
 		370E98D11EDEB411007E2692 /* CCAudioPreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAudioPreset.swift; sourceTree = "<group>"; };
+		3729CC031EDFA2B70050BD95 /* CCPickerViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPickerViewExtension.swift; sourceTree = "<group>"; };
+		3729CC051EDFA4C40050BD95 /* CCViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCViewExtension.swift; sourceTree = "<group>"; };
+		3729CC081EDFB4D20050BD95 /* CCFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCFontExtension.swift; sourceTree = "<group>"; };
+		3729CC0B1EDFBBE10050BD95 /* CCLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCLabelExtension.swift; sourceTree = "<group>"; };
+		3729CC0D1EDFBED30050BD95 /* CCMainHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +167,10 @@
 				370E98901EDE9BE5007E2692 /* CCStringExtension.swift */,
 				370E98921EDE9C22007E2692 /* CCDictionaryExtension.swift */,
 				370E98941EDE9C2D007E2692 /* CCArrayExtension.swift */,
+				3729CC031EDFA2B70050BD95 /* CCPickerViewExtension.swift */,
+				3729CC051EDFA4C40050BD95 /* CCViewExtension.swift */,
+				3729CC081EDFB4D20050BD95 /* CCFontExtension.swift */,
+				3729CC0B1EDFBBE10050BD95 /* CCLabelExtension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -219,6 +233,7 @@
 			children = (
 				370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */,
 				370E98D11EDEB411007E2692 /* CCAudioPreset.swift */,
+				3729CC0D1EDFBED30050BD95 /* CCMainHandler.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -363,15 +378,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3729CC0C1EDFBBE10050BD95 /* CCLabelExtension.swift in Sources */,
 				370E988F1EDE9802007E2692 /* CCObjectExtension.swift in Sources */,
 				370E988B1EDE83F1007E2692 /* CCCommonDefine.swift in Sources */,
 				370E98951EDE9C2D007E2692 /* CCArrayExtension.swift in Sources */,
 				370E98D21EDEB411007E2692 /* CCAudioPreset.swift in Sources */,
 				370E98811EDE744A007E2692 /* AppDelegate.swift in Sources */,
+				3729CC091EDFB4D20050BD95 /* CCFontExtension.swift in Sources */,
+				3729CC041EDFA2B70050BD95 /* CCPickerViewExtension.swift in Sources */,
 				370E98CF1EDEADBB007E2692 /* CCLocalizedHelper.swift in Sources */,
+				3729CC0E1EDFBED30050BD95 /* CCMainHandler.swift in Sources */,
 				370E98911EDE9BE5007E2692 /* CCStringExtension.swift in Sources */,
 				370E98831EDE74B7007E2692 /* CCBaseViewController.swift in Sources */,
 				370E98931EDE9C22007E2692 /* CCDictionaryExtension.swift in Sources */,
+				3729CC061EDFA4C40050BD95 /* CCViewExtension.swift in Sources */,
 				370E989C1EDEA7C7007E2692 /* CCMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +571,7 @@
 				370E98771EDE738C007E2692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

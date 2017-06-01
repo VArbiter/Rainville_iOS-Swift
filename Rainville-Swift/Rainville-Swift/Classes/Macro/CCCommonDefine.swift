@@ -14,7 +14,7 @@ let _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_ = "CC_APP_DID_RECEIVE_REMOTE_NOTIFI
 typealias CCCommonClosure = (Bool , Any) -> Void ;
 //typealias CCCommonClosure = (Bool , Any) ;
 
-let NULL = Optional<Any>.none!;
+let ccNULL = Optional<Any>.none!;
 
 public func CCLog <T> (string : T ,
                    stringFileName : String = #file ,
@@ -37,14 +37,14 @@ public func ccScreenHeight() -> Double {
     return Double(UIScreen.main.bounds.size.height);
 }
 
-public func ccHexColor(intValue : Int) -> UIColor {
-    return ccHexColorAlpha(intValue: intValue, floatAlpha: 1.0);
+public func ccHexColor(int : Int) -> UIColor {
+    return ccHexColorAlpha(int: int, floatAlpha: 1.0);
 }
 
-public func ccHexColorAlpha(intValue : Int , floatAlpha : Float) -> UIColor {
-    return UIColor.init(colorLiteralRed: Float(intValue & 0xFF0000 >> 16) / 255.0 ,
-                        green:  Float(intValue & 0xFF00 >> 16) / 255.0,
-                        blue:  Float(intValue & 0xFF >> 16) / 255.0,
+public func ccHexColorAlpha(int : Int , floatAlpha : Float) -> UIColor {
+    return UIColor.init(colorLiteralRed: Float(int & 0xFF0000 >> 16) / 255.0 ,
+                        green:  Float(int & 0xFF00 >> 16) / 255.0,
+                        blue:  Float(int & 0xFF >> 16) / 255.0,
                         alpha: floatAlpha);
 }
 
@@ -91,6 +91,14 @@ public func CC_Safe_UI_Closure(closureNil : Any , closure : @escaping () -> Void
             closure();
         }
     }
+}
+
+public func CC_Safe_Closure(closureNil : Any , closure : @escaping () -> Void) -> Void {
+    if (closureNil == Optional.none!
+        || closure == Optional.none!) {
+        return;
+    }
+    closure() ;
 }
 
 public func ccLocalizeString(string : String , _ : String) -> String {
