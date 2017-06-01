@@ -16,8 +16,6 @@
 		370E98911EDE9BE5007E2692 /* CCStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98901EDE9BE5007E2692 /* CCStringExtension.swift */; };
 		370E98931EDE9C22007E2692 /* CCDictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98921EDE9C22007E2692 /* CCDictionaryExtension.swift */; };
 		370E98951EDE9C2D007E2692 /* CCArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98941EDE9C2D007E2692 /* CCArrayExtension.swift */; };
-		370E989C1EDEA7C7007E2692 /* CCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98991EDEA7C7007E2692 /* CCMainViewController.swift */; };
-		370E989D1EDEA7C7007E2692 /* CCMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 370E989A1EDEA7C7007E2692 /* CCMainViewController.xib */; };
 		370E98BB1EDEAD7B007E2692 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 370E989F1EDEAD7A007E2692 /* Default-568h@2x.png */; };
 		370E98BC1EDEAD7B007E2692 /* elegant.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 370E98A01EDEAD7A007E2692 /* elegant.ttf */; };
 		370E98BD1EDEAD7B007E2692 /* ic_launcher_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 370E98A11EDEAD7A007E2692 /* ic_launcher_144.png */; };
@@ -37,13 +35,23 @@
 		370E98CB1EDEAD7B007E2692 /* ArrayItem_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B21EDEAD7B007E2692 /* ArrayItem_EN.plist */; };
 		370E98CC1EDEAD7B007E2692 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B31EDEAD7B007E2692 /* InfoPlist.strings */; };
 		370E98CD1EDEAD7B007E2692 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B51EDEAD7B007E2692 /* Localizable.strings */; };
-		370E98CF1EDEADBB007E2692 /* CCLocalizedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */; };
-		370E98D21EDEB411007E2692 /* CCAudioPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E98D11EDEB411007E2692 /* CCAudioPreset.swift */; };
 		3729CC041EDFA2B70050BD95 /* CCPickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC031EDFA2B70050BD95 /* CCPickerViewExtension.swift */; };
 		3729CC061EDFA4C40050BD95 /* CCViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC051EDFA4C40050BD95 /* CCViewExtension.swift */; };
 		3729CC091EDFB4D20050BD95 /* CCFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC081EDFB4D20050BD95 /* CCFontExtension.swift */; };
 		3729CC0C1EDFBBE10050BD95 /* CCLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC0B1EDFBBE10050BD95 /* CCLabelExtension.swift */; };
-		3729CC0E1EDFBED30050BD95 /* CCMainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC0D1EDFBED30050BD95 /* CCMainHandler.swift */; };
+		3729CC301EDFF5150050BD95 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC1F1EDFF5150050BD95 /* Launch Screen.storyboard */; };
+		3729CC311EDFF5150050BD95 /* Launch Screen_ZH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC201EDFF5150050BD95 /* Launch Screen_ZH.storyboard */; };
+		3729CC321EDFF5150050BD95 /* CCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC231EDFF5150050BD95 /* CCMainViewController.swift */; };
+		3729CC331EDFF5150050BD95 /* CCMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC241EDFF5150050BD95 /* CCMainViewController.xib */; };
+		3729CC341EDFF5150050BD95 /* CCAudioPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC261EDFF5150050BD95 /* CCAudioPreset.swift */; };
+		3729CC351EDFF5150050BD95 /* CCLocalizedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC271EDFF5150050BD95 /* CCLocalizedHelper.swift */; };
+		3729CC361EDFF5150050BD95 /* CCMainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC281EDFF5150050BD95 /* CCMainHandler.swift */; };
+		3729CC391EDFF5150050BD95 /* CCCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC2C1EDFF5150050BD95 /* CCCountDownView.swift */; };
+		3729CC3A1EDFF5150050BD95 /* CCCountDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC2D1EDFF5150050BD95 /* CCCountDownView.xib */; };
+		3729CC3B1EDFF5150050BD95 /* CCMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC2E1EDFF5150050BD95 /* CCMainHeaderView.swift */; };
+		3729CC3C1EDFF5150050BD95 /* CCMainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC2F1EDFF5150050BD95 /* CCMainHeaderView.xib */; };
+		3729CC3F1EDFF6950050BD95 /* CCAuthorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC3D1EDFF6950050BD95 /* CCAuthorInfoView.swift */; };
+		3729CC401EDFF6950050BD95 /* CCAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC3E1EDFF6950050BD95 /* CCAuthorInfoView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,8 +66,6 @@
 		370E98901EDE9BE5007E2692 /* CCStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCStringExtension.swift; sourceTree = "<group>"; };
 		370E98921EDE9C22007E2692 /* CCDictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDictionaryExtension.swift; sourceTree = "<group>"; };
 		370E98941EDE9C2D007E2692 /* CCArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCArrayExtension.swift; sourceTree = "<group>"; };
-		370E98991EDEA7C7007E2692 /* CCMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainViewController.swift; sourceTree = "<group>"; };
-		370E989A1EDEA7C7007E2692 /* CCMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMainViewController.xib; sourceTree = "<group>"; };
 		370E989F1EDEAD7A007E2692 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		370E98A01EDEAD7A007E2692 /* elegant.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = elegant.ttf; sourceTree = "<group>"; };
 		370E98A11EDEAD7A007E2692 /* ic_launcher_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher_144.png; sourceTree = "<group>"; };
@@ -83,13 +89,23 @@
 		370E98B81EDEAD7B007E2692 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		370E98B91EDEAD7B007E2692 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		370E98BA1EDEAD7B007E2692 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCLocalizedHelper.swift; sourceTree = "<group>"; };
-		370E98D11EDEB411007E2692 /* CCAudioPreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAudioPreset.swift; sourceTree = "<group>"; };
 		3729CC031EDFA2B70050BD95 /* CCPickerViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPickerViewExtension.swift; sourceTree = "<group>"; };
 		3729CC051EDFA4C40050BD95 /* CCViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCViewExtension.swift; sourceTree = "<group>"; };
 		3729CC081EDFB4D20050BD95 /* CCFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCFontExtension.swift; sourceTree = "<group>"; };
 		3729CC0B1EDFBBE10050BD95 /* CCLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCLabelExtension.swift; sourceTree = "<group>"; };
-		3729CC0D1EDFBED30050BD95 /* CCMainHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainHandler.swift; sourceTree = "<group>"; };
+		3729CC1F1EDFF5150050BD95 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3729CC201EDFF5150050BD95 /* Launch Screen_ZH.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen_ZH.storyboard"; sourceTree = "<group>"; };
+		3729CC231EDFF5150050BD95 /* CCMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainViewController.swift; sourceTree = "<group>"; };
+		3729CC241EDFF5150050BD95 /* CCMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMainViewController.xib; sourceTree = "<group>"; };
+		3729CC261EDFF5150050BD95 /* CCAudioPreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAudioPreset.swift; sourceTree = "<group>"; };
+		3729CC271EDFF5150050BD95 /* CCLocalizedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCLocalizedHelper.swift; sourceTree = "<group>"; };
+		3729CC281EDFF5150050BD95 /* CCMainHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainHandler.swift; sourceTree = "<group>"; };
+		3729CC2C1EDFF5150050BD95 /* CCCountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCCountDownView.swift; sourceTree = "<group>"; };
+		3729CC2D1EDFF5150050BD95 /* CCCountDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCountDownView.xib; sourceTree = "<group>"; };
+		3729CC2E1EDFF5150050BD95 /* CCMainHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainHeaderView.swift; sourceTree = "<group>"; };
+		3729CC2F1EDFF5150050BD95 /* CCMainHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMainHeaderView.xib; sourceTree = "<group>"; };
+		3729CC3D1EDFF6950050BD95 /* CCAuthorInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAuthorInfoView.swift; sourceTree = "<group>"; };
+		3729CC3E1EDFF6950050BD95 /* CCAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAuthorInfoView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +202,8 @@
 		370E987E1EDE744A007E2692 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				370E98851EDE77F7007E2692 /* Main */,
+				3729CC1E1EDFF5150050BD95 /* Launch */,
+				3729CC211EDFF5150050BD95 /* Main */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -207,35 +224,6 @@
 			children = (
 			);
 			path = Vendors;
-			sourceTree = "<group>";
-		};
-		370E98851EDE77F7007E2692 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				370E98981EDEA7C7007E2692 /* Controllers */,
-				370E989B1EDEA7C7007E2692 /* Tools */,
-			);
-			name = Main;
-			path = "Controllers + Views/Main";
-			sourceTree = "<group>";
-		};
-		370E98981EDEA7C7007E2692 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				370E98991EDEA7C7007E2692 /* CCMainViewController.swift */,
-				370E989A1EDEA7C7007E2692 /* CCMainViewController.xib */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		370E989B1EDEA7C7007E2692 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				370E98CE1EDEADBB007E2692 /* CCLocalizedHelper.swift */,
-				370E98D11EDEB411007E2692 /* CCAudioPreset.swift */,
-				3729CC0D1EDFBED30050BD95 /* CCMainHandler.swift */,
-			);
-			path = Tools;
 			sourceTree = "<group>";
 		};
 		370E989E1EDEAD7A007E2692 /* Icons */ = {
@@ -283,6 +271,57 @@
 				370E98B51EDEAD7B007E2692 /* Localizable.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		3729CC1E1EDFF5150050BD95 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				3729CC1F1EDFF5150050BD95 /* Launch Screen.storyboard */,
+				3729CC201EDFF5150050BD95 /* Launch Screen_ZH.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		3729CC211EDFF5150050BD95 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3729CC291EDFF5150050BD95 /* Views */,
+				3729CC221EDFF5150050BD95 /* Controllers */,
+				3729CC251EDFF5150050BD95 /* Tools */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3729CC221EDFF5150050BD95 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3729CC231EDFF5150050BD95 /* CCMainViewController.swift */,
+				3729CC241EDFF5150050BD95 /* CCMainViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3729CC251EDFF5150050BD95 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3729CC261EDFF5150050BD95 /* CCAudioPreset.swift */,
+				3729CC271EDFF5150050BD95 /* CCLocalizedHelper.swift */,
+				3729CC281EDFF5150050BD95 /* CCMainHandler.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		3729CC291EDFF5150050BD95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3729CC3D1EDFF6950050BD95 /* CCAuthorInfoView.swift */,
+				3729CC3E1EDFF6950050BD95 /* CCAuthorInfoView.xib */,
+				3729CC2C1EDFF5150050BD95 /* CCCountDownView.swift */,
+				3729CC2D1EDFF5150050BD95 /* CCCountDownView.xib */,
+				3729CC2E1EDFF5150050BD95 /* CCMainHeaderView.swift */,
+				3729CC2F1EDFF5150050BD95 /* CCMainHeaderView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,15 +386,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				370E98C41EDEAD7B007E2692 /* _4.wav in Resources */,
+				3729CC3C1EDFF5150050BD95 /* CCMainHeaderView.xib in Resources */,
 				370E98CC1EDEAD7B007E2692 /* InfoPlist.strings in Resources */,
+				3729CC3A1EDFF5150050BD95 /* CCCountDownView.xib in Resources */,
 				370E98C11EDEAD7B007E2692 /* _1.wav in Resources */,
-				370E989D1EDEA7C7007E2692 /* CCMainViewController.xib in Resources */,
+				3729CC331EDFF5150050BD95 /* CCMainViewController.xib in Resources */,
+				3729CC401EDFF6950050BD95 /* CCAuthorInfoView.xib in Resources */,
 				370E98BD1EDEAD7B007E2692 /* ic_launcher_144.png in Resources */,
 				370E98CB1EDEAD7B007E2692 /* ArrayItem_EN.plist in Resources */,
 				370E98BB1EDEAD7B007E2692 /* Default-568h@2x.png in Resources */,
+				3729CC301EDFF5150050BD95 /* Launch Screen.storyboard in Resources */,
 				370E98C31EDEAD7B007E2692 /* _3.wav in Resources */,
 				370E98BE1EDEAD7B007E2692 /* weather.otf in Resources */,
 				370E98BF1EDEAD7B007E2692 /* Musket regular.otf in Resources */,
+				3729CC311EDFF5150050BD95 /* Launch Screen_ZH.storyboard in Resources */,
 				370E98CA1EDEAD7B007E2692 /* ArrayItem_CH.plist in Resources */,
 				370E98C71EDEAD7B007E2692 /* _7.wav in Resources */,
 				370E98C51EDEAD7B007E2692 /* _5.wav in Resources */,
@@ -381,18 +425,21 @@
 				3729CC0C1EDFBBE10050BD95 /* CCLabelExtension.swift in Sources */,
 				370E988F1EDE9802007E2692 /* CCObjectExtension.swift in Sources */,
 				370E988B1EDE83F1007E2692 /* CCCommonDefine.swift in Sources */,
+				3729CC351EDFF5150050BD95 /* CCLocalizedHelper.swift in Sources */,
+				3729CC321EDFF5150050BD95 /* CCMainViewController.swift in Sources */,
+				3729CC3F1EDFF6950050BD95 /* CCAuthorInfoView.swift in Sources */,
 				370E98951EDE9C2D007E2692 /* CCArrayExtension.swift in Sources */,
-				370E98D21EDEB411007E2692 /* CCAudioPreset.swift in Sources */,
 				370E98811EDE744A007E2692 /* AppDelegate.swift in Sources */,
+				3729CC341EDFF5150050BD95 /* CCAudioPreset.swift in Sources */,
 				3729CC091EDFB4D20050BD95 /* CCFontExtension.swift in Sources */,
+				3729CC361EDFF5150050BD95 /* CCMainHandler.swift in Sources */,
 				3729CC041EDFA2B70050BD95 /* CCPickerViewExtension.swift in Sources */,
-				370E98CF1EDEADBB007E2692 /* CCLocalizedHelper.swift in Sources */,
-				3729CC0E1EDFBED30050BD95 /* CCMainHandler.swift in Sources */,
 				370E98911EDE9BE5007E2692 /* CCStringExtension.swift in Sources */,
 				370E98831EDE74B7007E2692 /* CCBaseViewController.swift in Sources */,
 				370E98931EDE9C22007E2692 /* CCDictionaryExtension.swift in Sources */,
 				3729CC061EDFA4C40050BD95 /* CCViewExtension.swift in Sources */,
-				370E989C1EDEA7C7007E2692 /* CCMainViewController.swift in Sources */,
+				3729CC3B1EDFF5150050BD95 /* CCMainHeaderView.swift in Sources */,
+				3729CC391EDFF5150050BD95 /* CCCountDownView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
