@@ -47,9 +47,9 @@
                 <constraint firstItem="sEw-M0-2Ly" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nOe-1X-OWe"/>
             </constraints>
             <connections>
-                <outlet property="labelLeft" destination="cN6-63-oyM" id="kYV-65-fGL"/>
-                <outlet property="labelRight" destination="G9J-Ji-WqF" id="VFY-J6-O49"/>
-                <outlet property="pickerViewTime" destination="sEw-M0-2Ly" id="1Ko-EP-NjF"/>
+                <outlet property="labelLeft" destination="cN6-63-oyM" id="AQp-qk-bpO"/>
+                <outlet property="labelRight" destination="G9J-Ji-WqF" id="SQr-YQ-Nec"/>
+                <outlet property="pickerViewTime" destination="sEw-M0-2Ly" id="fZG-yQ-xwd"/>
             </connections>
             <point key="canvasLocation" x="-46.5" y="-66.5"/>
         </view>
