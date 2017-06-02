@@ -11,7 +11,7 @@ import UIKit
 
 let _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_ = "CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION";
 
-typealias CCCommonClosure = (Bool , Any) -> Void? ;
+typealias CCCommonClosure = (Bool , Any) -> Void ;
 //typealias CCCommonClosure = (Bool , Any) ;
 
 let ccNULL = Optional<Any>.none!;
@@ -77,9 +77,8 @@ public func ccImageWithCache(_ string : String ,_ isCache : Bool) -> UIImage {
     return UIImage.init(contentsOfFile: string)!;
 }
 
-public func CC_Safe_UI_Closure(_ closureNil : Any ,_ closure : @escaping () -> Void) -> Void {
-    if (closureNil == Optional.none!
-        || closure == Optional.none!) {
+public func CC_Safe_UI_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void) -> Void {
+    if (closureNil == nil) {
         return ;
     }
     
@@ -93,9 +92,8 @@ public func CC_Safe_UI_Closure(_ closureNil : Any ,_ closure : @escaping () -> V
     }
 }
 
-public func CC_Safe_Closure(_ closureNil : Any ,_ closure : @escaping () -> Void) -> Void {
-    if (closureNil == Optional.none!
-        || closure == Optional.none!) {
+public func CC_Safe_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void) -> Void {
+    if (closureNil == nil) {
         return;
     }
     closure() ;

@@ -15,7 +15,7 @@ extension UIPickerView {
         for (_ , value) in self.subviews.enumerated() {
             if value.isKind(of: UIView.self) {
                 if value.height < 1.0 {
-                    value.backgroundColor = ccHexColor(int: 0x22A1A2);
+                    value.backgroundColor = ccHexColor(0x22A1A2);
                     value.height = 2.0;
                 }
             }

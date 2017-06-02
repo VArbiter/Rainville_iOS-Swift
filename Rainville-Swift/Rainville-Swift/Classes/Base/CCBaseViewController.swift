@@ -8,14 +8,14 @@
 
 import UIKit
 
-class CCBaseViewController: UIViewController {
+open class CCBaseViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-    override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
@@ -31,7 +31,7 @@ class CCBaseViewController: UIViewController {
     }
     
     deinit {
-        CCLog(string: "_CC_\(self.ccStringEntityControllerName())_DELLOC_");
+        CCLog("_CC_\(self.ccStringEntityControllerName())_DELLOC_");
     }
     
 }
