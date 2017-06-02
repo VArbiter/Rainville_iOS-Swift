@@ -39,8 +39,8 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
     }
     
     private func ccDefaultSettings() -> Void {
-        let _ = self.labelLeft.ccMusket(float: 12.0, string: _CC_SET_CLOSE_TIMER_());
-        let _ = self.labelRight.ccMusket(float: 12.0, string: _CC_SET_CLOSE_MINUTES_());
+        let _ = self.labelLeft.ccMusket(12.0, _CC_SET_CLOSE_TIMER_());
+        let _ = self.labelRight.ccMusket(12.0, _CC_SET_CLOSE_MINUTES_());
         self.pickerViewTime.delegate = self;
         self.pickerViewTime.dataSource = self;
         self.array = Array<Int> ([0,5,10,15,20,25,30,35,40,45,50,55,60,90,120]);
@@ -68,10 +68,10 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
         }
         if label == nil {
             label = UILabel.init();
-            label?.font = UIFont.ccMusketFontWithSize(float: 11.0);
+            label?.font = UIFont.ccMusketFontWithSize(11.0);
             label?.textAlignment = NSTextAlignment.center;
             label?.backgroundColor = UIColor.clear;
-            label?.textColor = ccHexColor(int: 0xFEFEFE);
+            label?.textColor = ccHexColor(0xFEFEFE);
         }
         label?.text = self .pickerView(pickerView, titleForRow: row, forComponent: component);
         pickerView.ccCyanSeperateLine();

@@ -29,19 +29,19 @@ class CCMainHeaderView: UIView {
         let viewHeader : CCMainHeaderView? = Bundle.main.loadNibNamed(NSStringFromClass(CCMainHeaderView.self), owner: nil, options: nil)?.first as? CCMainHeaderView;
         viewHeader?.frame = CGRect(x: 0, y: 0, width: ccScreenWidth(), height: ccScreenHeight());
         if viewHeader != nil {
-            viewHeader?.ccSetUpDownLabel(bool: true);
+            viewHeader?.ccSetUpDownLabel(true);
             viewHeader?.ccInitSubViewSettings();
             viewHeader?.ccShowIcon();
         }
         return viewHeader!;
     }
     
-    public func ccSetUpDownLabel(bool : Bool) -> Void {
-        let _ = self.labelUpDown.ccElegantIcons(float: 25.0, string: bool ? "6" : "7");
+    public func ccSetUpDownLabel(_ bool : Bool) -> Void {
+        let _ = self.labelUpDown.ccElegantIcons(25.0, bool ? "6" : "7");
         self.labelUpDown.sizeToFit();
         
-        self.ccSetBackGroundOpaque(bool: !bool);
-        self.ccSetBriefInfoHidden(bool: !bool);
+        self.ccSetBackGroundOpaque(!bool);
+        self.ccSetBriefInfoHidden(!bool);
     }
     public func ccSetButtonStatus(bool : Bool) -> Void{
 //        self.buttonPlayPause
@@ -56,15 +56,14 @@ class CCMainHeaderView: UIView {
     private func ccShowIcon() -> Void {
         
     }
-    private func ccSetBackGroundOpaque(bool : Bool) -> Void {
+    private func ccSetBackGroundOpaque(_ bool : Bool) -> Void {
         
     }
-    private func ccSetBriefInfoHidden(bool : Bool) -> Void {
+    private func ccSetBriefInfoHidden(_ bool : Bool) -> Void {
         
     }
     
     @IBAction private func ccButtonPlayPauseAction(_ sender: UIButton) {
     }
     
-
 }

@@ -11,15 +11,15 @@ import UIKit
 
 extension UIFont {
     
-    public class func ccMusketFontWithSize(float : CGFloat) -> UIFont {
+    public class func ccMusketFontWithSize(_ float : CGFloat) -> UIFont {
         return UIFont.init(name: "Musket", size: float)!;
     }
     
-    public class func ccWeatherIconsWithSize(float : CGFloat) -> UIFont {
+    public class func ccWeatherIconsWithSize(_ float : CGFloat) -> UIFont {
         return UIFont.init(name: "Weather Icons", size: float)!;
     }
     
-    public class func ccElegantIconsWithSize(float : CGFloat) -> UIFont {
+    public class func ccElegantIconsWithSize(_ float : CGFloat) -> UIFont {
         return UIFont.init(name: "ElegantIcons", size: float)!;
     }
     

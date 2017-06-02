@@ -28,7 +28,7 @@ class CCMainHandler: NSObject {
 //            let propertySize : UInt32 = UInt32(MemoryLayout<CFString>.size);
         }
         
-        CC_Safe_Closure(closureNil: closure) {
+        CC_Safe_Closure(closure) {
             closure(isHeadphoneInsert , ccNULL);
         }
         
@@ -44,7 +44,7 @@ class CCMainHandler: NSObject {
             
         }
         
-        CC_Safe_Closure(closureNil: closure) {
+        CC_Safe_Closure(closure) {
             closure(isMuteEnabled , ccNULL);
         }
         return isMuteEnabled;
@@ -77,7 +77,7 @@ class CCMainHandler: NSObject {
     public class func ccCreateMainTableViewWithScrollView(scrollView : UIScrollView) -> UITableView {
         let tableView : UITableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: ccScreenWidth(), height: scrollView.height), style: UITableViewStyle.plain);
         tableView.backgroundColor = UIColor.clear;
-        tableView.separatorColor = ccHexColor(int: 0x434D5B);
+        tableView.separatorColor = ccHexColor(0x434D5B);
         tableView.showsHorizontalScrollIndicator = false;
         tableView.bounces = false;
         tableView.indicatorStyle = UIScrollViewIndicatorStyle.white;

@@ -27,15 +27,15 @@ class CCAuthorInfoView: UIView {
     }
     
     private func ccDefaultSettings() -> Void {
-        self.buttonEmail.titleLabel?.font = UIFont.ccMusketFontWithSize(float: 12.0);
-        self.buttonLink.titleLabel?.font = UIFont.ccMusketFontWithSize(float: 12.0);
-        let _ = self.labelAppName.ccMusket(float: 12.0, string: _CC_APP_NAME_());
-        let _ = self.labelVersion.ccMusket(float: 12.0, string: self.ccGetVersionString());
+        self.buttonEmail.titleLabel?.font = UIFont.ccMusketFontWithSize(12.0);
+        self.buttonLink.titleLabel?.font = UIFont.ccMusketFontWithSize(12.0);
+        let _ = self.labelAppName.ccMusket(12.0, _CC_APP_NAME_());
+        let _ = self.labelVersion.ccMusket(12.0, self.ccGetVersionString());
     }
     
     private func ccGetVersionString() -> String {
         let dictionaryInfo : Dictionary = Bundle.main.infoDictionary!;
-        return ccStringFormat(string: "\(_CC_VERSION_()): \(dictionaryInfo["CFBundleShortVersionString"] ?? "1.0.0")) \(dictionaryInfo["CFBundleVersion"] ?? "1.0.0")")
+        return ccStringFormat("\(_CC_VERSION_()): \(dictionaryInfo["CFBundleShortVersionString"] ?? "1.0.0")) \(dictionaryInfo["CFBundleVersion"] ?? "1.0.0")")
     }
     
     private func ccRotateImageView() -> Void  {
@@ -50,7 +50,7 @@ class CCAuthorInfoView: UIView {
     }
     
     @IBAction private func ccButtonLinkAction(_ sender: UIButton) {
-        let url : URL = ccURL(string: "https://github.com/VArbiter", isFile: false);
+        let url : URL = ccURL("https://github.com/VArbiter", false);
         if #available(iOS 10, *) {
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
