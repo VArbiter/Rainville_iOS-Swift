@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CCMainViewController: CCBaseViewController {
+class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITableViewDataSource , CCPlayActionDelegate ,  {
 
     @IBOutlet weak var labelPoem: UILabel!
     

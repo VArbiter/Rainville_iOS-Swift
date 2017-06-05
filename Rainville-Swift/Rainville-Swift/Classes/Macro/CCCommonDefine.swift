@@ -48,7 +48,7 @@ public func ccHexColorAlpha(_ int : Int ,_ floatAlpha : Float) -> UIColor {
                         alpha: floatAlpha);
 }
 
-public func ccRGBColor(_ R : Float ,_ G : Float ,_ B : Float) -> UIColor{
+public func ccRGBColor(_ R : Float ,_ G : Float ,_ B : Float) -> UIColor {
     return ccRGBAColor(R, G, B, 1.0);
 }
 

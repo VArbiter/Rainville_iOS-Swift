@@ -44,26 +44,67 @@ class CCMainHeaderView: UIView {
         self.ccSetBriefInfoHidden(!bool);
     }
     public func ccSetButtonStatus(bool : Bool) -> Void{
-//        self.buttonPlayPause
+        self.buttonPlayPause.isSelected = bool;
+        self.buttonPlayPause.backgroundColor = ccHexColor(bool ? 0x22A1A2 : 0x333333);
     }
     public func ccIsAudioPlay() -> Bool {
-        
+        return self.buttonPlayPause.isSelected;
     }
     
     private func ccInitSubViewSettings() -> Void {
+        let isContainEnglish : Bool = _CC_LANGUAGE_().contains("English");
         
+        if isContainEnglish {
+            let _ = self.labelAppName.ccMusket(30.0, _CC_APP_NAME_());
+        } else {
+            self.labelAppName.text = _CC_APP_NAME_();
+        }
+        self.labelAppName.sizeToFit();
+        
+        let _ = self.labelDesc.ccMusketWithString(_CC_APP_DESP_());
+        self.labelDesc.sizeToFit();
+        
+        let _ = self.labelIcon.ccWeatherIcons(70.0, "\\uf006");
+        self.labelIcon.sizeToFit();
+        
+        let _ = self.labelCountDown.ccMusket(25.0, "00 : 00");
+        self.labelCountDown.isHidden = true;
+        
+        if isContainEnglish {
+            self.buttonPlayPause.titleLabel?.font = UIFont.ccMusketFontWithSize(15.0);
+        }
+        self.buttonPlayPause.setTitle(_CC_PLAY_(), for: UIControlState.normal);
+        self.buttonPlayPause.setTitle(_CC_STOP_(), for: UIControlState.selected);
+        self.buttonPlayPause.width = self.labelIcon.width - 20.0;
     }
     private func ccShowIcon() -> Void {
-        
+        self.labelIcon.alpha = 0.0;
+        weak var pSelf = self;
+        UIView.animate(withDuration: 1.0) {
+            pSelf?.labelIcon.alpha = 1.0;
+        };
     }
     private func ccSetBackGroundOpaque(_ bool : Bool) -> Void {
-        
+        weak var pSelf = self;
+        UIView.animate(withDuration: 0.5) { 
+            pSelf?.viewBackground.alpha = bool ? 0.65 : 0.95;
+        }
     }
     private func ccSetBriefInfoHidden(_ bool : Bool) -> Void {
-        
+        weak var pSelf = self;
+        UIView.animate(withDuration: 0.5) { 
+            pSelf?.labelAppName.alpha = bool ? 0.0 : 1.0 ;
+            pSelf?.labelDesc.alpha = bool ? 0.0 : 1.0 ;
+            pSelf?.viewLightLine.alpha = bool ? 0.0 : 1.0 ;
+        };
     }
     
     @IBAction private func ccButtonPlayPauseAction(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected;
+        
+        sender.backgroundColor = ccHexColor(sender.isSelected ? 0x22A1A2 : 0x333333);
+        
+        self.delegate?.ccHeaderButtonActionWithPlayOrPause(bool: sender.isSelected);
     }
     
 }

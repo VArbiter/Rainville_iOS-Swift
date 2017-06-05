@@ -52,6 +52,8 @@
 		3729CC3C1EDFF5150050BD95 /* CCMainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC2F1EDFF5150050BD95 /* CCMainHeaderView.xib */; };
 		3729CC3F1EDFF6950050BD95 /* CCAuthorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC3D1EDFF6950050BD95 /* CCAuthorInfoView.swift */; };
 		3729CC401EDFF6950050BD95 /* CCAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC3E1EDFF6950050BD95 /* CCAuthorInfoView.xib */; };
+		372DCA981EE4F1BB00FEF7C3 /* CCMainScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DCA971EE4F1BB00FEF7C3 /* CCMainScrollCell.swift */; };
+		372DCA9A1EE4F4E700FEF7C3 /* CCMainLighterTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DCA991EE4F4E700FEF7C3 /* CCMainLighterTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,8 @@
 		3729CC2F1EDFF5150050BD95 /* CCMainHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMainHeaderView.xib; sourceTree = "<group>"; };
 		3729CC3D1EDFF6950050BD95 /* CCAuthorInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAuthorInfoView.swift; sourceTree = "<group>"; };
 		3729CC3E1EDFF6950050BD95 /* CCAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAuthorInfoView.xib; sourceTree = "<group>"; };
+		372DCA971EE4F1BB00FEF7C3 /* CCMainScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainScrollCell.swift; sourceTree = "<group>"; };
+		372DCA991EE4F4E700FEF7C3 /* CCMainLighterTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainLighterTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +311,7 @@
 				3729CC261EDFF5150050BD95 /* CCAudioPreset.swift */,
 				3729CC271EDFF5150050BD95 /* CCLocalizedHelper.swift */,
 				3729CC281EDFF5150050BD95 /* CCMainHandler.swift */,
+				372DCA991EE4F4E700FEF7C3 /* CCMainLighterTableView.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 		3729CC291EDFF5150050BD95 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				372DCA971EE4F1BB00FEF7C3 /* CCMainScrollCell.swift */,
 				3729CC3D1EDFF6950050BD95 /* CCAuthorInfoView.swift */,
 				3729CC3E1EDFF6950050BD95 /* CCAuthorInfoView.xib */,
 				3729CC2C1EDFF5150050BD95 /* CCCountDownView.swift */,
@@ -426,12 +432,14 @@
 				370E988F1EDE9802007E2692 /* CCObjectExtension.swift in Sources */,
 				370E988B1EDE83F1007E2692 /* CCCommonDefine.swift in Sources */,
 				3729CC351EDFF5150050BD95 /* CCLocalizedHelper.swift in Sources */,
+				372DCA9A1EE4F4E700FEF7C3 /* CCMainLighterTableView.swift in Sources */,
 				3729CC321EDFF5150050BD95 /* CCMainViewController.swift in Sources */,
 				3729CC3F1EDFF6950050BD95 /* CCAuthorInfoView.swift in Sources */,
 				370E98951EDE9C2D007E2692 /* CCArrayExtension.swift in Sources */,
 				370E98811EDE744A007E2692 /* AppDelegate.swift in Sources */,
 				3729CC341EDFF5150050BD95 /* CCAudioPreset.swift in Sources */,
 				3729CC091EDFB4D20050BD95 /* CCFontExtension.swift in Sources */,
+				372DCA981EE4F1BB00FEF7C3 /* CCMainScrollCell.swift in Sources */,
 				3729CC361EDFF5150050BD95 /* CCMainHandler.swift in Sources */,
 				3729CC041EDFA2B70050BD95 /* CCPickerViewExtension.swift in Sources */,
 				370E98911EDE9BE5007E2692 /* CCStringExtension.swift in Sources */,
