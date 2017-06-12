@@ -54,6 +54,7 @@
 		3729CC401EDFF6950050BD95 /* CCAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC3E1EDFF6950050BD95 /* CCAuthorInfoView.xib */; };
 		372DCA981EE4F1BB00FEF7C3 /* CCMainScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DCA971EE4F1BB00FEF7C3 /* CCMainScrollCell.swift */; };
 		372DCA9A1EE4F4E700FEF7C3 /* CCMainLighterTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DCA991EE4F4E700FEF7C3 /* CCMainLighterTableView.swift */; };
+		37F1A4051EEE6CAD00848881 /* CCAudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1A4041EEE6CAD00848881 /* CCAudioHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		3729CC3E1EDFF6950050BD95 /* CCAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAuthorInfoView.xib; sourceTree = "<group>"; };
 		372DCA971EE4F1BB00FEF7C3 /* CCMainScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainScrollCell.swift; sourceTree = "<group>"; };
 		372DCA991EE4F4E700FEF7C3 /* CCMainLighterTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMainLighterTableView.swift; sourceTree = "<group>"; };
+		37F1A4041EEE6CAD00848881 /* CCAudioHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAudioHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 		3729CC251EDFF5150050BD95 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				37F1A4041EEE6CAD00848881 /* CCAudioHandler.swift */,
 				3729CC261EDFF5150050BD95 /* CCAudioPreset.swift */,
 				3729CC271EDFF5150050BD95 /* CCLocalizedHelper.swift */,
 				3729CC281EDFF5150050BD95 /* CCMainHandler.swift */,
@@ -434,6 +437,7 @@
 				3729CC351EDFF5150050BD95 /* CCLocalizedHelper.swift in Sources */,
 				372DCA9A1EE4F4E700FEF7C3 /* CCMainLighterTableView.swift in Sources */,
 				3729CC321EDFF5150050BD95 /* CCMainViewController.swift in Sources */,
+				37F1A4051EEE6CAD00848881 /* CCAudioHandler.swift in Sources */,
 				3729CC3F1EDFF6950050BD95 /* CCAuthorInfoView.swift in Sources */,
 				370E98951EDE9C2D007E2692 /* CCArrayExtension.swift in Sources */,
 				370E98811EDE744A007E2692 /* AppDelegate.swift in Sources */,

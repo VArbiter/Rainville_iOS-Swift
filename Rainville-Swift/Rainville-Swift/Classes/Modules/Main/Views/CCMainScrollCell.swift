@@ -33,8 +33,8 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
     }()
     private let closure : ((String , Int) -> Void)?;
     private var integerSelectedIndex : Int;
-    private let lightTableViewDelegate : CCMainLighterDelegate;
-    private let lightTableViewDataSource : CCMainLighterDataSource;
+    private var lightTableViewDelegate : CCMainLighterDelegate;
+    private var lightTableViewDataSource : CCMainLighterDataSource;
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
@@ -49,6 +49,11 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         self.frame = frame;
         self.backgroundColor = UIColor.clear;
         self.integerSelectedIndex = 0 ;
+    }
+    
+    convenience init() {
+        self.init(CGRect(origin: CGPoint.zero, size: CGSize(width: ccScreenWidth(), height: ccScreenWidth() * 0.3)));
+        self.backgroundColor = UIColor.clear;
     }
     
     override func layoutSubviews() {
@@ -69,15 +74,46 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
     }
     
     public func ccConfigureCellWithHandler(_ block : @escaping CCSelectBlock) -> Void {
+        self.contentView.backgroundColor = UIColor.clear;
         
+        self.lightTableViewDataSource = CCMainLighterDataSource.init(withReloadClosure: nil);
+        self.tableView.dataSource = self.lightTableViewDataSource;
+        
+        self.lightTableViewDelegate = CCMainLighterDelegate.init(withSelectedClosure: { [unowned self] (intSelectedIndex : Int) in
+            self.integerSelectedIndex = intSelectedIndex;
+            if let closure = self.closure {
+                closure(self.arrayItem[intSelectedIndex] as! String , intSelectedIndex);
+            };
+        });
+        self.tableView.delegate = self.lightTableViewDelegate;
     }
     
-    public func ccSetPlayingAudio(_ control : CCAudioControl) -> Void {
+    public func ccSetPlayingAudio(_ sender : CCAudioControl) -> Void {
+        switch sender {
+        case .CCAudioControlNext:
+            self.integerSelectedIndex += 1 ;
+            if self.integerSelectedIndex > self.arrayItem.count - 1 {
+                self.integerSelectedIndex -= 1;
+            }
+        case .CCAudioControlPrevious:
+            self.integerSelectedIndex -= 1;
+            if self.integerSelectedIndex < 0 {
+                self.integerSelectedIndex += 1;
+            }
+        default: break;
+            
+        }
         
+        if let closure = self.closure {
+            closure(self.arrayItem[self.integerSelectedIndex] as! String , self.integerSelectedIndex);
+        }
     }
     
     public func ccSetTimer(_ isEnable : Bool) -> Void {
-        
+        self.viewCountDown.ccEnableCountingDown(bool: isEnable);
+        if !isEnable {
+            self.viewCountDown.ccCancelAndResetCountingDown();
+        }
     }
     
 //MARK: - CCCountDownDelegate
