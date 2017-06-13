@@ -18,7 +18,7 @@ class CCAuthorInfoView: UIView {
     
     
     class func initFromNib() -> CCAuthorInfoView {
-        let infoView : CCAuthorInfoView? = Bundle.main.loadNibNamed(NSStringFromClass(CCAuthorInfoView.self), owner: nil, options: nil)?.first as? CCAuthorInfoView;
+        let infoView : CCAuthorInfoView? = Bundle.main.loadNibNamed("CCAuthorInfoView", owner: nil, options: nil)?.first as? CCAuthorInfoView;
         if infoView != nil { 
             infoView?.frame = CGRect(x: ccScreenWidth() * 2.0, y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
             infoView?.ccDefaultSettings();

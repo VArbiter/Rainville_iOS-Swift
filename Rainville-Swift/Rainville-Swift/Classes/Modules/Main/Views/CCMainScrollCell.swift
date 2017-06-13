@@ -48,19 +48,17 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(_ frame : CGRect) {
-        self.init(frame: frame);
+    convenience init(_ frame : CGRect) {
+        self.init();
         self.frame = frame;
         self.backgroundColor = UIColor.clear;
-        self.integerSelectedIndex = 0 ;
+        self.setNeedsLayout();
+        self.layoutIfNeeded();
     }
     
-    convenience init() {
-        self.init(CGRect(origin: CGPoint.zero, size: CGSize(width: ccScreenWidth(), height: ccScreenWidth() * 0.3)));
-        self.backgroundColor = UIColor.clear;
-    }
     
-    override func layoutSubviews() {
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded();
         
         self.scrollViewBottom = CCMainHandler.ccCreateMainBottomScrollViewWithView();
         self.contentView.addSubview(self.scrollViewBottom);
