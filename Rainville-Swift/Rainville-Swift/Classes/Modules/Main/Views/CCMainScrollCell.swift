@@ -51,15 +51,14 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
     convenience init(_ frame : CGRect) {
         self.init();
         self.frame = frame;
-        self.backgroundColor = UIColor.clear;
         self.setNeedsLayout();
         self.layoutIfNeeded();
     }
     
-    
     override func layoutIfNeeded() {
         super.layoutIfNeeded();
         
+        self.backgroundColor = UIColor.clear;
         self.scrollViewBottom = CCMainHandler.ccCreateMainBottomScrollViewWithView();
         self.contentView.addSubview(self.scrollViewBottom);
         
