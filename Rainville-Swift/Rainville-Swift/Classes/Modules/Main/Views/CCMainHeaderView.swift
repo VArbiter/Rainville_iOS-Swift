@@ -25,7 +25,7 @@ class CCMainHeaderView: UIView {
     @IBOutlet private weak var labelAppName: UILabel!
     @IBOutlet weak var labelCountDown: UILabel!
     
-    public class func initFromNib() -> CCMainHeaderView {
+    class func initFromNib() -> CCMainHeaderView {
         let viewHeader : CCMainHeaderView? = Bundle.main.loadNibNamed(NSStringFromClass(CCMainHeaderView.self), owner: nil, options: nil)?.first as? CCMainHeaderView;
         viewHeader?.frame = CGRect(x: 0, y: 0, width: ccScreenWidth(), height: ccScreenHeight());
         if viewHeader != nil {
@@ -36,22 +36,22 @@ class CCMainHeaderView: UIView {
         return viewHeader!;
     }
     
-    public func ccSetUpDownLabel(_ bool : Bool) -> Void {
+    func ccSetUpDownLabel(_ bool : Bool) {
         let _ = self.labelUpDown.ccElegantIcons(25.0, bool ? "6" : "7");
         self.labelUpDown.sizeToFit();
         
         self.ccSetBackGroundOpaque(!bool);
         self.ccSetBriefInfoHidden(!bool);
     }
-    public func ccSetButtonStatus(bool : Bool) -> Void{
+    func ccSetButtonStatus(bool : Bool) {
         self.buttonPlayPause.isSelected = bool;
         self.buttonPlayPause.backgroundColor = ccHexColor(bool ? 0x22A1A2 : 0x333333);
     }
-    public func ccIsAudioPlay() -> Bool {
+    func ccIsAudioPlay() -> Bool {
         return self.buttonPlayPause.isSelected;
     }
     
-    private func ccInitSubViewSettings() -> Void {
+    private func ccInitSubViewSettings() {
         let isContainEnglish : Bool = _CC_LANGUAGE_().contains("English");
         
         if isContainEnglish {
@@ -77,20 +77,20 @@ class CCMainHeaderView: UIView {
         self.buttonPlayPause.setTitle(_CC_STOP_(), for: UIControlState.selected);
         self.buttonPlayPause.width = self.labelIcon.width - 20.0;
     }
-    private func ccShowIcon() -> Void {
+    private func ccShowIcon() {
         self.labelIcon.alpha = 0.0;
         weak var pSelf = self;
         UIView.animate(withDuration: 1.0) {
             pSelf?.labelIcon.alpha = 1.0;
         };
     }
-    private func ccSetBackGroundOpaque(_ bool : Bool) -> Void {
+    private func ccSetBackGroundOpaque(_ bool : Bool) {
         weak var pSelf = self;
         UIView.animate(withDuration: 0.5) { 
             pSelf?.viewBackground.alpha = bool ? 0.65 : 0.95;
         }
     }
-    private func ccSetBriefInfoHidden(_ bool : Bool) -> Void {
+    private func ccSetBriefInfoHidden(_ bool : Bool) {
         weak var pSelf = self;
         UIView.animate(withDuration: 0.5) { 
             pSelf?.labelAppName.alpha = bool ? 0.0 : 1.0 ;

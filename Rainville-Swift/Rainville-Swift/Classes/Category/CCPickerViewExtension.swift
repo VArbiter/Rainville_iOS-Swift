@@ -11,7 +11,7 @@ import UIKit
 
 extension UIPickerView {
     
-    public func ccCyanSeperateLine() -> Void {
+    func ccCyanSeperateLine() {
         for (_ , value) in self.subviews.enumerated() {
             if value.isKind(of: UIView.self) {
                 if value.height < 1.0 {

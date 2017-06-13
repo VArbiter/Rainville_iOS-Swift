@@ -17,39 +17,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CCLog(NSHomeDirectory());
         
         self.window = UIWindow.init();
-        self.window?.frame = UIScreen.main.bounds;
-        self.window?.backgroundColor = UIColor.white;
-        
-        let mainVC = CCBaseViewController.init(nibName: NSStringFromClass(CCBaseViewController.self), bundle: Bundle.main);
-        self.window?.rootViewController = mainVC;
-        
-        self.window?.makeKeyAndVisible();
-        
-        UIApplication.shared.beginReceivingRemoteControlEvents();
-        
-        return true
+        if let windowT = self.window {
+            windowT.frame = UIScreen.main.bounds;
+            windowT.backgroundColor = UIColor.white;
+            
+            let mainVC = CCBaseViewController.init(nibName: NSStringFromClass(CCBaseViewController.self), bundle: Bundle.main);
+            windowT.rootViewController = mainVC;
+            
+            windowT.makeKeyAndVisible();
+            
+            UIApplication.shared.beginReceivingRemoteControlEvents();
+            
+            return true;
+        }
+        return false;
     }
     
     override func remoteControlReceived(with event: UIEvent?) {
-        if event?.type != UIEventType.remoteControl {
-            return;
-        }
-        var integerOrder : Int;
-        let eventSubtype = event?.subtype;
         
-        switch eventSubtype! {
+        if let eventT = event {
+            if eventT.type != UIEventType.remoteControl {
+                return;
+            }
+            var integerOrder : Int;
+            
+            let eventSubtype = eventT.subtype;
+            
+            switch eventSubtype {
             case .remoteControlPause : integerOrder = UIEventSubtype.remoteControlPause.rawValue ;
             case .remoteControlPlay : integerOrder = UIEventSubtype.remoteControlPlay.rawValue ;
             case .remoteControlNextTrack : integerOrder = UIEventSubtype.remoteControlNextTrack.rawValue ;
             case .remoteControlPreviousTrack : integerOrder = UIEventSubtype.remoteControlPreviousTrack.rawValue ;
             case .remoteControlTogglePlayPause : integerOrder = UIEventSubtype.remoteControlTogglePlayPause.rawValue ;
             default: integerOrder = -1;
+            }
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_),
+                                            object: nil,
+                                            userInfo: Dictionary.init(dictionaryLiteral: ("key",integerOrder)));
         }
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_),
-                                        object: nil,
-                                        userInfo: Dictionary.init(dictionaryLiteral: ("key",integerOrder)));
-        
     }
 
 }

@@ -12,7 +12,7 @@ import AudioToolbox
 
 class CCMainHandler: NSObject {
     
-    public class func ccIsHeadPhoneInsertWithHandler(_ closure : @escaping CCCommonClosure) -> Bool {
+    class func ccIsHeadPhoneInsertWithHandler(_ closure : @escaping CCCommonClosure) -> Bool {
         var isHeadphoneInsert : Bool = false;
         if __IPHONE_OS_VERSION_MAX_ALLOWED > Int32(7.0) {
             let route : AVAudioSessionRouteDescription = AVAudioSession.sharedInstance().currentRoute;
@@ -35,7 +35,7 @@ class CCMainHandler: NSObject {
         return isHeadphoneInsert;
     }
     
-    public class func ccIsMuteEnabledWithHandler(_ closure : @escaping CCCommonClosure) -> Bool {
+    class func ccIsMuteEnabledWithHandler(_ closure : @escaping CCCommonClosure) -> Bool {
         var isMuteEnabled : Bool = false;
         if __IPHONE_OS_VERSION_MAX_ALLOWED > Int32(7.0) {
 //TODO: 检测 7.0 以上静音 .
@@ -50,7 +50,7 @@ class CCMainHandler: NSObject {
         return isMuteEnabled;
     }
     
-    public class func ccCreateMainBottomScrollViewWithView() -> UIScrollView {
+    class func ccCreateMainBottomScrollViewWithView() -> UIScrollView {
         let scrollView : UIScrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3));
         scrollView.showsVerticalScrollIndicator = false;
         scrollView.showsHorizontalScrollIndicator = false;
@@ -63,7 +63,7 @@ class CCMainHandler: NSObject {
         return scrollView;
     }
     
-    public class func ccCreateContentTableView() -> UITableView {
+    class func ccCreateContentTableView() -> UITableView {
         let tableView : UITableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: ccScreenWidth(), height: ccScreenHeight()), style: UITableViewStyle.plain);
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none ;
         tableView.showsHorizontalScrollIndicator = false;
@@ -74,7 +74,7 @@ class CCMainHandler: NSObject {
         return tableView;
     }
     
-    public class func ccCreateMainTableViewWithScrollView(_ scrollView : UIScrollView) -> UITableView {
+    class func ccCreateMainTableViewWithScrollView(_ scrollView : UIScrollView) -> UITableView {
         let tableView : UITableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: ccScreenWidth(), height: scrollView.height), style: UITableViewStyle.plain);
         tableView.backgroundColor = UIColor.clear;
         tableView.separatorColor = ccHexColor(0x434D5B);

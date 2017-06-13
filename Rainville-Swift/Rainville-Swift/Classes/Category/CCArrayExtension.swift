@@ -10,7 +10,7 @@ import Foundation
 
 extension Array {
     
-    public var isArrayValued : Bool {
+    var isArrayValued : Bool {
         get {
             if self.count > 0 {
                 return true;

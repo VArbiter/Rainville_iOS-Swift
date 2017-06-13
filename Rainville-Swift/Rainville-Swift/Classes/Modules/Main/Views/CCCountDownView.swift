@@ -22,7 +22,7 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
     
     private var array : Array<Int>!;
     
-    public class func initFromNib() -> CCCountDownView {
+    class func initFromNib() -> CCCountDownView {
         let viewCountDown : CCCountDownView? = Bundle.main.loadNibNamed(NSStringFromClass(CCCountDownView.self), owner: nil, options: nil)?.first as? CCCountDownView;
         if viewCountDown != nil {            
             viewCountDown?.frame = CGRect(x: ccScreenWidth(), y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
@@ -30,15 +30,15 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
         }
         return viewCountDown!;
     }
-    public func ccEnableCountingDown(bool : Bool) -> Void {
+    func ccEnableCountingDown(bool : Bool) {
         self.pickerViewTime.alpha = bool ? 1.0 : 0.8;
         self.pickerViewTime.isUserInteractionEnabled = bool;
     }
-    public func ccCancelAndResetCountingDown() -> Void {
+    func ccCancelAndResetCountingDown() {
         self.pickerViewTime.selectRow(0, inComponent: 0, animated: true);
     }
     
-    private func ccDefaultSettings() -> Void {
+    private func ccDefaultSettings() {
         let _ = self.labelLeft.ccMusket(12.0, _CC_SET_CLOSE_TIMER_());
         let _ = self.labelRight.ccMusket(12.0, _CC_SET_CLOSE_MINUTES_());
         self.pickerViewTime.delegate = self;
@@ -47,21 +47,21 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
     }
     
 //MARK:- UIPickerViewDataSource
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1 ;
     }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.array.count ;
     }
     
 //MARK:- UIPickerViewDelegate
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return self.array[row] == 0 ? _CC_CANCEL_() : "\(self.array[row])" ;
     }
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    internal func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return CGFloat(ccScreenHeight() * 0.3 * 0.35) ;
     }
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    internal func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label : UILabel? ;
         if (view?.isKind(of: UILabel.self))! {
             label = view as? UILabel;
@@ -77,7 +77,7 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
         pickerView.ccCyanSeperateLine();
         return label!;
     }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    internal func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.delegate?.ccCountDownWithTime(int: self.array[row] * 60)
     }
   

@@ -22,17 +22,17 @@ class CCMainLighterDataSource : NSObject , UITableViewDataSource {
     }
     
 //MARK: - UITableViewDataSource
-    func numberOfSections(in tableView: UITableView) -> Int {
+    internal func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let array = self.arrayData {
             return array.count;
         } else {
             return 0;
         }
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "_CC_CELL_ID_");
         if let cellNew = cell {
             return cellNew;
@@ -63,7 +63,7 @@ class CCMainLighterDelegate: NSObject , UITableViewDelegate {
     
 //MARK: - UITableViewDelegate
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.integerSelectedIndex == indexPath.row {
             self.integerSelectedIndex = indexPath.row;
             weak var pSelf = self ;
@@ -73,11 +73,11 @@ class CCMainLighterDelegate: NSObject , UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(ccScreenHeight() * 0.3 / 6.0) ;
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    internal func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.layoutMargins = UIEdgeInsets.zero;
         cell.separatorInset = UIEdgeInsets.zero;
     }

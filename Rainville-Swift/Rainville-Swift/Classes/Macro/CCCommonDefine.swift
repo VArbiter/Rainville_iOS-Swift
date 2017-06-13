@@ -9,54 +9,54 @@
 import Foundation
 import UIKit
 
-let _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_ = "CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION";
+let _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_ : String = "CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION";
 
-typealias CCCommonClosure = (Bool , Any) -> Void ;
+typealias CCCommonClosure = (Bool , Any?) -> Void ;
 //typealias CCCommonClosure = (Bool , Any) ;
 
 let ccNULL = Optional<Any>.none!;
 
-public func CCLog <T> (_ string : T ,
-                   stringFileName : String = #file ,
-                   stringFunction : String = #function ,
-                   integerLine : Int = #line) -> Void {
+func CCLog <T> (_ string : T ,
+            stringFileName : String = #file ,
+            stringFunction : String = #function ,
+            integerLine : Int = #line) -> Void {
     #if DEBUG
         print("_CC_LOG_ \n\(stringFileName) \n\(stringFunction) \n\(integerLine) \n\(string)");
     #endif
 }
 
-public func ccStringFormat<T>(_ string : T) -> String {
+func ccStringFormat<T>(_ string : T) -> String {
     return String.init(format: "%@", string as! CVarArg);
 }
 
-public func ccScreenWidth() -> Double {
+func ccScreenWidth() -> Double {
     return Double(UIScreen.main.bounds.size.width);
 }
 
-public func ccScreenHeight() -> Double {
+func ccScreenHeight() -> Double {
     return Double(UIScreen.main.bounds.size.height);
 }
 
-public func ccHexColor(_ int : Int) -> UIColor {
+func ccHexColor(_ int : Int) -> UIColor {
     return ccHexColorAlpha(int, 1.0);
 }
 
-public func ccHexColorAlpha(_ int : Int ,_ floatAlpha : Float) -> UIColor {
+func ccHexColorAlpha(_ int : Int ,_ floatAlpha : Float) -> UIColor {
     return UIColor.init(colorLiteralRed: Float(int & 0xFF0000 >> 16) / 255.0 ,
                         green:  Float(int & 0xFF00 >> 16) / 255.0,
                         blue:  Float(int & 0xFF >> 16) / 255.0,
                         alpha: floatAlpha);
 }
 
-public func ccRGBColor(_ R : Float ,_ G : Float ,_ B : Float) -> UIColor {
+func ccRGBColor(_ R : Float ,_ G : Float ,_ B : Float) -> UIColor {
     return ccRGBAColor(R, G, B, 1.0);
 }
 
-public func ccRGBAColor(_ R : Float ,_ G : Float ,_ B : Float ,_ A : Float) -> UIColor {
+func ccRGBAColor(_ R : Float ,_ G : Float ,_ B : Float ,_ A : Float) -> UIColor {
     return UIColor.init(colorLiteralRed: R, green: G, blue: B, alpha: A);
 }
 
-public func ccURL (_ string : String ,_ isFile : Bool) -> URL {
+func ccURL (_ string : String ,_ isFile : Bool) -> URL {
     if !string.isStringValued {
         return Optional.none!; // 为 nil
     }
@@ -66,18 +66,18 @@ public func ccURL (_ string : String ,_ isFile : Bool) -> URL {
     return URL.init(string: string)!;
 }
 
-public func ccImage(_ string : String) -> UIImage{
+func ccImage(_ string : String) -> UIImage{
     return ccImageWithCache(string, true);
 }
 
-public func ccImageWithCache(_ string : String ,_ isCache : Bool) -> UIImage {
+func ccImageWithCache(_ string : String ,_ isCache : Bool) -> UIImage {
     if isCache {
         return UIImage.init(named: string)!;
     }
     return UIImage.init(contentsOfFile: string)!;
 }
 
-public func CC_Safe_UI_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void) -> Void {
+func CC_Safe_UI_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void) {
     if (closureNil == nil) {
         return ;
     }
@@ -92,14 +92,14 @@ public func CC_Safe_UI_Closure(_ closureNil : Any? ,_ closure : @escaping () -> 
     }
 }
 
-public func CC_Safe_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void) -> Void {
+func CC_Safe_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void){
     if (closureNil == nil) {
         return;
     }
     closure() ;
 }
 
-public func ccLocalizeString(_ string : String , _ : String) -> String {
+func ccLocalizeString(_ string : String , _ : String) -> String {
     return NSLocalizedString(string, comment: Optional.none!);
 }
 

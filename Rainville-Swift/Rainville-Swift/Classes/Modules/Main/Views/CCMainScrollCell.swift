@@ -21,20 +21,24 @@ enum CCAudioControl : Int {
 
 class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
     
-    public var delegate : CCCellTimerDelegate?;
+    var delegate : CCCellTimerDelegate?;
     
-    private var scrollViewBottom : UIScrollView! ;
+    private lazy var scrollViewBottom: UIScrollView = {
+        return CCMainHandler.ccCreateMainBottomScrollViewWithView()
+    }()
+    
     private var tableView : UITableView! ;
-    private var viewInfo : CCAuthorInfoView! ;
-    private var viewCountDown : CCCountDownView! ;
+    
+    private var viewInfo : CCAuthorInfoView? ;
+    private var viewCountDown : CCCountDownView? ;
     
     private lazy var arrayItem: Array = {
         return  _CC_ARRAY_ITEM_();
     }()
-    private let closure : ((String , Int) -> Void)?;
-    private var integerSelectedIndex : Int;
-    private var lightTableViewDelegate : CCMainLighterDelegate;
-    private var lightTableViewDataSource : CCMainLighterDataSource;
+    private var closure : ((String , Int) -> Void)?;
+    private var integerSelectedIndex : Int = 0;
+    private var lightTableViewDelegate : CCMainLighterDelegate?;
+    private var lightTableViewDataSource : CCMainLighterDataSource?;
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
@@ -62,18 +66,18 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         self.contentView.addSubview(self.scrollViewBottom);
         
         self.viewInfo = CCAuthorInfoView.initFromNib();
-        self.scrollViewBottom.addSubview(self.viewInfo);
+        self.scrollViewBottom.addSubview(self.viewInfo!);
         
         self.viewCountDown = CCCountDownView.initFromNib();
-        self.viewCountDown.delegate = self;
-        self.scrollViewBottom.addSubview(self.viewCountDown);
+        self.viewCountDown?.delegate = self;
+        self.scrollViewBottom.addSubview(self.viewCountDown!);
         
         self.tableView = CCMainHandler.ccCreateMainTableViewWithScrollView(self.scrollViewBottom);
-        self.scrollViewBottom.addSubview(self.tableView);
+        self.scrollViewBottom.addSubview(self.tableView!);
         
     }
     
-    public func ccConfigureCellWithHandler(_ block : @escaping CCSelectBlock) -> Void {
+    func ccConfigureCellWithHandler(_ block : @escaping CCSelectBlock) {
         self.contentView.backgroundColor = UIColor.clear;
         
         self.lightTableViewDataSource = CCMainLighterDataSource.init(withReloadClosure: nil);
@@ -88,7 +92,7 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         self.tableView.delegate = self.lightTableViewDelegate;
     }
     
-    public func ccSetPlayingAudio(_ sender : CCAudioControl) -> Void {
+    func ccSetPlayingAudio(_ sender : CCAudioControl) {
         switch sender {
         case .CCAudioControlNext:
             self.integerSelectedIndex += 1 ;
@@ -109,10 +113,10 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         }
     }
     
-    public func ccSetTimer(_ isEnable : Bool) -> Void {
-        self.viewCountDown.ccEnableCountingDown(bool: isEnable);
+    func ccSetTimer(_ isEnable : Bool) {
+        self.viewCountDown?.ccEnableCountingDown(bool: isEnable);
         if !isEnable {
-            self.viewCountDown.ccCancelAndResetCountingDown();
+            self.viewCountDown?.ccCancelAndResetCountingDown();
         }
     }
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public func ccDefaultAudioSet () -> Dictionary<String, Any> {
+func ccDefaultAudioSet () -> Dictionary<String, Any> {
     let _CC_FAIRY_RAIN_ : Array <Float> = Array <Float>([0.0,0.0,0.0,0.0,0.1,0.2,0.3,0.4,0.5,0.6]);
     
     let _CC_BEDROOM_ : Array <Float> = Array <Float>([0.0,0.0,0.0,0.0,0.1,0.2,0.3,0.2,0.1,0.0]);
@@ -82,7 +82,7 @@ public func ccDefaultAudioSet () -> Dictionary<String, Any> {
 }
 
 /// url object
-public func ccAudioFilePath () -> Array<URL> {
+func ccAudioFilePath () -> Array<URL> {
     let array : NSMutableArray = NSMutableArray.init();
     for i in 0...9 {
         let stringFilePath : String = Bundle.main.path(forResource: ccStringFormat( "_\(i)"), ofType: "wav")!;

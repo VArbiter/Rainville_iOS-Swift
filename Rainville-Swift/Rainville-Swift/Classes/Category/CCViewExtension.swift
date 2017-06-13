@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
     
-    public var x : Double {
+    var x : Double {
         set {
             var frame : CGRect = self.frame;
             frame.origin.x = CGFloat(x);
@@ -22,7 +22,7 @@ extension UIView {
         }
     }
     
-    public var y : Double {
+    var y : Double {
         set {
             var frame : CGRect = self.frame;
             frame.origin.y = CGFloat(y);
@@ -33,7 +33,7 @@ extension UIView {
         }
     }
     
-    public var width : Double {
+    var width : Double {
         set {
             var frame : CGRect = self.frame;
             frame.size.width = CGFloat(width);
@@ -44,7 +44,7 @@ extension UIView {
         }
     }
     
-    public var height : Double {
+    var height : Double {
         set {
             var frame : CGRect = self.frame;
             frame.size.height = CGFloat(height);
@@ -55,7 +55,7 @@ extension UIView {
         }
     }
     
-    public var origin : CGPoint {
+    var origin : CGPoint {
         set {
             var frame : CGRect = self.frame;
             frame.origin = origin;
@@ -66,7 +66,7 @@ extension UIView {
         }
     }
     
-    public var size : CGSize {
+    var size : CGSize {
         set {
             var frame : CGRect = self.frame;
             frame.size = size;
@@ -77,7 +77,7 @@ extension UIView {
         }
     }
     
-    public var left : Double {
+    var left : Double {
         set {
             var frame : CGRect = self.frame;
             frame.origin.x = CGFloat(left);
@@ -88,7 +88,7 @@ extension UIView {
         }
     }
     
-    public var right : Double {
+    var right : Double {
         set {
             var frame : CGRect = self.frame;
             frame.origin.x = CGFloat(right) - frame.size.width;
@@ -99,7 +99,7 @@ extension UIView {
         }
     }
     
-    public var top : Double {
+    var top : Double {
         set {
             var frame : CGRect = self.frame;
             frame.origin.y = CGFloat(top);
@@ -110,7 +110,7 @@ extension UIView {
         }
     }
     
-    public var bottom : Double {
+    var bottom : Double {
         set {
             var frame : CGRect = self.frame;
             frame.origin.y = CGFloat(bottom) - frame.size.height;

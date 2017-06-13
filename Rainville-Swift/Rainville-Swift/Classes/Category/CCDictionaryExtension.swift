@@ -10,7 +10,7 @@ import Foundation
 
 extension Dictionary {
     
-    public var isDictionaryValued : Bool {
+    var isDictionaryValued : Bool {
         get {
             if (self.keys.count > 0
                 && self.values.count > 0

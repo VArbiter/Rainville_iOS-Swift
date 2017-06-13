@@ -9,12 +9,7 @@
 import Foundation
 
 extension NSObject {
-    public var stringValue : String {
+    var stringValue : String {
         return String.init(format: "%@", self);
     }
-    
-    
-    
-    
-    
 }

@@ -17,7 +17,7 @@ class CCAuthorInfoView: UIView {
     @IBOutlet private weak var buttonEmail: UIButton!
     
     
-    public class func initFromNib() -> CCAuthorInfoView {
+    class func initFromNib() -> CCAuthorInfoView {
         let infoView : CCAuthorInfoView? = Bundle.main.loadNibNamed(NSStringFromClass(CCAuthorInfoView.self), owner: nil, options: nil)?.first as? CCAuthorInfoView;
         if infoView != nil { 
             infoView?.frame = CGRect(x: ccScreenWidth() * 2.0, y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
@@ -26,7 +26,7 @@ class CCAuthorInfoView: UIView {
         return infoView!;
     }
     
-    private func ccDefaultSettings() -> Void {
+    private func ccDefaultSettings() {
         self.buttonEmail.titleLabel?.font = UIFont.ccMusketFontWithSize(12.0);
         self.buttonLink.titleLabel?.font = UIFont.ccMusketFontWithSize(12.0);
         let _ = self.labelAppName.ccMusket(12.0, _CC_APP_NAME_());
@@ -38,7 +38,7 @@ class CCAuthorInfoView: UIView {
         return ccStringFormat("\(_CC_VERSION_()): \(dictionaryInfo["CFBundleShortVersionString"] ?? "1.0.0")) \(dictionaryInfo["CFBundleVersion"] ?? "1.0.0")")
     }
     
-    private func ccRotateImageView() -> Void  {
+    private func ccRotateImageView() {
         let animation : CABasicAnimation = CABasicAnimation.init(keyPath: "transform.rotation.z");
         animation.fromValue = 0.0;
         animation.toValue = Double.pi * 2.0;
