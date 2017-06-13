@@ -81,7 +81,7 @@ class CCAudioHandler: NSObject {
         ditionary.updateValue(stringKey, forKey: MPMediaItemPropertyTitle);
         ditionary.updateValue(_CC_APP_NAME_(), forKey: MPMediaItemPropertyArtist);
         
-        let image : UIImage! = UIImage.init(named: "ic_launcher_144");
+        let image : UIImage! = UIImage.init(named: "ic_launcher");
         let artImage : MPMediaItemArtwork! = MPMediaItemArtwork.init(boundsSize: image.size) { (size : CGSize) -> UIImage in
             return image;
         };
