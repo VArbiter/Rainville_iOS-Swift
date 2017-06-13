@@ -62,20 +62,22 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
         return CGFloat(ccScreenHeight() * 0.3 * 0.35) ;
     }
     internal func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var label : UILabel? ;
-        if (view?.isKind(of: UILabel.self))! {
-            label = view as? UILabel;
-        }
-        if label == nil {
-            label = UILabel.init();
-            label?.font = UIFont.ccMusketFontWithSize(11.0);
-            label?.textAlignment = NSTextAlignment.center;
-            label?.backgroundColor = UIColor.clear;
-            label?.textColor = ccHexColor(0xFEFEFE);
-        }
-        label?.text = self .pickerView(pickerView, titleForRow: row, forComponent: component);
+        let closure = { [unowned self] (labelC : UILabel) -> UILabel in
+            labelC.font = UIFont.ccMusketFontWithSize(11.0);
+            labelC.textAlignment = NSTextAlignment.center;
+            labelC.backgroundColor = UIColor.clear;
+            labelC.textColor = ccHexColor(0xFEFEFE);
+            labelC.text = self.pickerView(pickerView, titleForRow: row, forComponent: component);
+            return labelC;
+        };
+        
         pickerView.ccCyanSeperateLine();
-        return label!;
+        let label : UILabel? = view as? UILabel;
+        if let labelT = label {
+            return closure(labelT);
+        } else {
+            return closure(UILabel.init());
+        }
     }
     internal func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.delegate?.ccCountDownWithTime(int: self.array[row] * 60)
