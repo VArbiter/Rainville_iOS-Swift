@@ -42,7 +42,6 @@
 		3729CC301EDFF5150050BD95 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC1F1EDFF5150050BD95 /* Launch Screen.storyboard */; };
 		3729CC311EDFF5150050BD95 /* Launch Screen_ZH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC201EDFF5150050BD95 /* Launch Screen_ZH.storyboard */; };
 		3729CC321EDFF5150050BD95 /* CCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC231EDFF5150050BD95 /* CCMainViewController.swift */; };
-		3729CC331EDFF5150050BD95 /* CCMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC241EDFF5150050BD95 /* CCMainViewController.xib */; };
 		3729CC341EDFF5150050BD95 /* CCAudioPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC261EDFF5150050BD95 /* CCAudioPreset.swift */; };
 		3729CC351EDFF5150050BD95 /* CCLocalizedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC271EDFF5150050BD95 /* CCLocalizedHelper.swift */; };
 		3729CC361EDFF5150050BD95 /* CCMainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC281EDFF5150050BD95 /* CCMainHandler.swift */; };
@@ -54,6 +53,7 @@
 		3729CC401EDFF6950050BD95 /* CCAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC3E1EDFF6950050BD95 /* CCAuthorInfoView.xib */; };
 		372DCA981EE4F1BB00FEF7C3 /* CCMainScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DCA971EE4F1BB00FEF7C3 /* CCMainScrollCell.swift */; };
 		372DCA9A1EE4F4E700FEF7C3 /* CCMainLighterTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372DCA991EE4F4E700FEF7C3 /* CCMainLighterTableView.swift */; };
+		37577C641EEFD665008FCF8F /* CCMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC241EDFF5150050BD95 /* CCMainViewController.xib */; };
 		37F1A4051EEE6CAD00848881 /* CCAudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1A4041EEE6CAD00848881 /* CCAudioHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -394,12 +394,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37577C641EEFD665008FCF8F /* CCMainViewController.xib in Resources */,
 				370E98C41EDEAD7B007E2692 /* _4.wav in Resources */,
 				3729CC3C1EDFF5150050BD95 /* CCMainHeaderView.xib in Resources */,
 				370E98CC1EDEAD7B007E2692 /* InfoPlist.strings in Resources */,
 				3729CC3A1EDFF5150050BD95 /* CCCountDownView.xib in Resources */,
 				370E98C11EDEAD7B007E2692 /* _1.wav in Resources */,
-				3729CC331EDFF5150050BD95 /* CCMainViewController.xib in Resources */,
 				3729CC401EDFF6950050BD95 /* CCAuthorInfoView.xib in Resources */,
 				370E98BD1EDEAD7B007E2692 /* ic_launcher_144.png in Resources */,
 				370E98CB1EDEAD7B007E2692 /* ArrayItem_EN.plist in Resources */,

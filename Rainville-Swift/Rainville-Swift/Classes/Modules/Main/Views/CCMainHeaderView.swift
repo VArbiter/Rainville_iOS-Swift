@@ -26,7 +26,7 @@ class CCMainHeaderView: UIView {
     @IBOutlet weak var labelCountDown: UILabel!
     
     class func initFromNib() -> CCMainHeaderView {
-        let viewHeader : CCMainHeaderView? = Bundle.main.loadNibNamed(NSStringFromClass(CCMainHeaderView.self), owner: nil, options: nil)?.first as? CCMainHeaderView;
+        let viewHeader : CCMainHeaderView? = Bundle.main.loadNibNamed("CCMainHeaderView", owner: nil, options: nil)?.first as? CCMainHeaderView;
         viewHeader?.frame = CGRect(x: 0, y: 0, width: ccScreenWidth(), height: ccScreenHeight());
         if viewHeader != nil {
             viewHeader?.ccSetUpDownLabel(true);

@@ -16,17 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         CCLog(NSHomeDirectory());
         
-        self.window = UIWindow.init();
+        self.window = UIWindow.init(frame: UIScreen.main.bounds);
         if let windowT = self.window {
             windowT.frame = UIScreen.main.bounds;
             windowT.backgroundColor = UIColor.white;
             
-            let mainVC = CCBaseViewController.init(nibName: NSStringFromClass(CCBaseViewController.self), bundle: Bundle.main);
+            let mainVC : CCMainViewController = CCMainViewController.init(nibName: "CCMainViewController", bundle: Bundle.main);
             windowT.rootViewController = mainVC;
             
             windowT.makeKeyAndVisible();
             
-            UIApplication.shared.beginReceivingRemoteControlEvents();
+            application.beginReceivingRemoteControlEvents();
             
             return true;
         }

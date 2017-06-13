@@ -83,10 +83,10 @@ func ccDefaultAudioSet () -> Dictionary<String, Any> {
 
 /// url object
 func ccAudioFilePath () -> Array<URL> {
-    let array : NSMutableArray = NSMutableArray.init();
+    var array : Array<URL> = [];
     for i in 0...9 {
         let stringFilePath : String = Bundle.main.path(forResource: ccStringFormat( "_\(i)"), ofType: "wav")!;
-        array.add(ccURL(stringFilePath, false));
+        array.append(ccURL(stringFilePath, false));
     }
-    return array as! Array<URL> ;
+    return array ;
 }

@@ -100,7 +100,7 @@ func CC_Safe_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void){
 }
 
 func ccLocalizeString(_ string : String , _ : String) -> String {
-    return NSLocalizedString(string, comment: Optional.none!);
+    return NSLocalizedString(string, comment: "");
 }
 
 public struct CCCommonDefine {

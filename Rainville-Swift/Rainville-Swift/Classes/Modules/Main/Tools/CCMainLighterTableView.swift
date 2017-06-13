@@ -11,14 +11,15 @@ import UIKit
 
 class CCMainLighterDataSource : NSObject , UITableViewDataSource {
     
-    private lazy var arrayData : Array? = {
+    private lazy var arrayData : Array = {
         return _CC_ARRAY_ITEM_();
     }()
     
-    init(withReloadClosure closure : (() -> Void)?) {
+    convenience init(withReloadClosure closure : (() -> Void)?) {
         if let closureNew = closure {
             closureNew();
         }
+        self.init();
     }
     
 //MARK: - UITableViewDataSource
@@ -26,11 +27,7 @@ class CCMainLighterDataSource : NSObject , UITableViewDataSource {
         return 1;
     }
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let array = self.arrayData {
-            return array.count;
-        } else {
-            return 0;
-        }
+        return self.arrayData.count;
     }
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "_CC_CELL_ID_");
@@ -43,7 +40,7 @@ class CCMainLighterDataSource : NSObject , UITableViewDataSource {
             cell?.selectedBackgroundView = UIView.init(frame: (cell?.bounds)!);
             cell?.selectedBackgroundView?.backgroundColor = ccHexColor(0x22A1A2);
             cell?.textLabel?.highlightedTextColor = ccHexColor(0x333333);
-            let _ = cell?.textLabel?.ccMusket(15.0, self.arrayData?[indexPath.row] as! String);
+            let _ = cell?.textLabel?.ccMusket(15.0, self.arrayData[indexPath.row] as! String);
             return cell!;
         }
     }
@@ -53,10 +50,11 @@ class CCMainLighterDataSource : NSObject , UITableViewDataSource {
 
 class CCMainLighterDelegate: NSObject , UITableViewDelegate {
     
-    private let closure : ((Int) -> Void)? ;
-    private var integerSelectedIndex : Int ;
+    private var closure : ((Int) -> Void)? = nil;
+    private var integerSelectedIndex : Int = 0 ;
     
-    init(withSelectedClosure closure : @escaping (Int) -> Void) {
+    convenience init(withSelectedClosure closure : @escaping (Int) -> Void) {
+        self.init();
         self.closure = closure;
         self.integerSelectedIndex = -1;
     }

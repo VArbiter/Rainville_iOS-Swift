@@ -81,7 +81,9 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         self.contentView.backgroundColor = UIColor.clear;
         
         self.lightTableViewDataSource = CCMainLighterDataSource.init(withReloadClosure: nil);
-        self.tableView.dataSource = self.lightTableViewDataSource;
+        if let dataSourceT = self.lightTableViewDataSource {
+            self.tableView.dataSource = dataSourceT;
+        }
         
         self.lightTableViewDelegate = CCMainLighterDelegate.init(withSelectedClosure: { [unowned self] (intSelectedIndex : Int) in
             self.integerSelectedIndex = intSelectedIndex;
@@ -89,7 +91,9 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
                 closure(self.arrayItem[intSelectedIndex] as! String , intSelectedIndex);
             };
         });
-        self.tableView.delegate = self.lightTableViewDelegate;
+        if let delegateT = self.lightTableViewDelegate {
+            self.tableView.delegate = delegateT;
+        }
     }
     
     func ccSetPlayingAudio(_ sender : CCAudioControl) {
