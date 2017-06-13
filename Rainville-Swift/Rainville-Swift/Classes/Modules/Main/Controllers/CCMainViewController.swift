@@ -100,7 +100,6 @@ class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITable
         return CGFloat(ccScreenHeight() * 0.3);
     }
     
-    
 //MARK: - CCPlayActionDelegate
     internal func ccHeaderButtonActionWithPlayOrPause(bool: Bool) {
         self.handler.ccPausePlayingWithCompleteHandler({

@@ -12,7 +12,6 @@ import UIKit
 let _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_ : String = "CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION";
 
 typealias CCCommonClosure = (Bool , Any?) -> Void ;
-//typealias CCCommonClosure = (Bool , Any) ;
 
 let ccNULL = Optional<Any>.none!;
 

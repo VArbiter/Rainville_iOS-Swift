@@ -63,16 +63,15 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         self.scrollViewBottom = CCMainHandler.ccCreateMainBottomScrollViewWithView();
         self.contentView.addSubview(self.scrollViewBottom);
         
+        self.tableView = CCMainHandler.ccCreateMainTableViewWithScrollView(self.scrollViewBottom);
+        self.scrollViewBottom.addSubview(self.tableView!);
+        
         self.viewInfo = CCAuthorInfoView.initFromNib();
         self.scrollViewBottom.addSubview(self.viewInfo!);
         
         self.viewCountDown = CCCountDownView.initFromNib();
         self.viewCountDown?.delegate = self;
         self.scrollViewBottom.addSubview(self.viewCountDown!);
-        
-        self.tableView = CCMainHandler.ccCreateMainTableViewWithScrollView(self.scrollViewBottom);
-        self.scrollViewBottom.addSubview(self.tableView!);
-        
     }
     
     func ccConfigureCellWithHandler(_ block : @escaping CCSelectBlock) {
