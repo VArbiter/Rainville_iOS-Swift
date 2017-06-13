@@ -30,13 +30,13 @@ class CCAudioHandler: NSObject {
     }()
     private var displayLink : CADisplayLink? ;
     private var timer : DispatchSourceTimer! ;
-    private var intCountTime : Int! = 0;
-    private var arrayVolume : Array<Double>! ;
-    private var arrayAudioPlayer : Array<AVAudioPlayer>! ;
-    private var arrayVolumeFrameValue : Array<Double>! ;
-    private var option : CCPlayOption! = CCPlayOption.CCPlayOptionPause;
+    private var intCountTime : Int = 0;
+    private var arrayVolume : Array<Double> ;
+    private var arrayAudioPlayer : Array<AVAudioPlayer> ;
+    private var arrayVolumeFrameValue : Array<Double> ;
+    private var option : CCPlayOption = CCPlayOption.CCPlayOptionPause;
     private var closure : (() -> Void)? ;
-    private var intDisplayCount : Int! = 0 ;
+    private var intDisplayCount : Int = 0 ;
     
 //MARK: - Public
     func ccSetAudioPlayerWithVolumeArray(_ arrayVolume : Array<Double> , _ closure : @escaping () -> Void) {
@@ -109,7 +109,7 @@ class CCAudioHandler: NSObject {
         let intervalTime : DispatchTimeInterval = .seconds(self.intCountTime);
         self.timer.scheduleRepeating(deadline: .now() + intervalTime, interval: intervalTime);
         self.timer.setEventHandler { [unowned self] in
-            self.intCountTime! -= 1;
+            self.intCountTime -= 1;
             let isStop : Bool = self.intCountTime <= 0;
             if isStop {
                 self.option = CCPlayOption.CCPlayOptionPause;
@@ -130,7 +130,7 @@ class CCAudioHandler: NSObject {
     }
     
 //MARK: - Private
-    private func ccDisplayAction(_ sender : CADisplayLink) {
+    @objc private func ccDisplayAction(_ sender : CADisplayLink) {
         if (self.intDisplayCount > 30 || self.intDisplayCount <= 0) {
             self.ccInvalidateDisplayLink();
             if self.option == CCPlayOption.CCPlayOptionPause {
@@ -159,28 +159,95 @@ class CCAudioHandler: NSObject {
             }
         }
         
-//TODO: - 
+        switch self.option {
+        case .CCPlayOptionNone:
+            self.ccInvalidateDisplayLink();
+            return;
+        case .CCPlayOptionPlay:
+            self.intDisplayCount += 1;
+            for i in 0..<self.arrayAudioPlayer.count {
+                closure(Float(self.arrayVolumeFrameValue[i]) , true , self.arrayAudioPlayer[i]);
+            }
+        case .CCPlayOptionPause:
+            self.intCountTime -= 1;
+            for i in 0..<self.arrayAudioPlayer.count {
+                closure(Float(self.arrayVolumeFrameValue[i]) , false , self.arrayAudioPlayer[i]);
+            }
+        default:
+            self.ccInvalidateDisplayLink();
+            return;
+        }
     }
     
     private func ccPlay() {
+        let closure = { [unowned self] in
+            self.ccInvalidateDisplayLink();
+            let _ = self.ccDisplayLink();
+        }
         
+        let audioPlayer : AVAudioPlayer?  = self.arrayAudioPlayer.first;
+        if let audioPlayerT = audioPlayer {
+            if audioPlayerT.isPlaying {
+                for i in 0..<self.arrayAudioPlayer.count {
+                    self.operationQueue.addOperation {
+                        let tempPlayer : AVAudioPlayer? = self.arrayAudioPlayer[i];
+                        if let tempPlayerT = tempPlayer {
+                            tempPlayerT.volume = Float(self.arrayVolume[i]);
+                        }
+                    }
+                }
+                if let closureT = self.closure {
+                    closureT();
+                }
+                return;
+            }
+        }
+        closure();
     }
     private func ccPause() {
-        
+        self.intDisplayCount = 0;
+        self.ccInvalidateDisplayLink();
+        let _ = self.ccDisplayLink();
     }
     private func ccInterPause() {
-        
+        self.intCountTime = 0;
+        self.ccInvalidateDisplayLink();
+        for item : AVAudioPlayer in self.arrayAudioPlayer {
+            item.pause();
+        }
+        if let closureT = self.closure {
+            closureT();
+        }
     }
     
     private func ccDisplayLink() -> CADisplayLink {
-        
+        self.ccInvalidateDisplayLink();
+        let displayLink : CADisplayLink = CADisplayLink.init(target: self, selector: #selector(ccDisplayAction(_ :)));
+        displayLink.preferredFramesPerSecond = 30;
+        displayLink.add(to: .current, forMode: .commonModes);
+        self.displayLink = displayLink;
+        return displayLink;
     }
     private func ccInvalidateDisplayLink() {
-        
+        guard (self.displayLink != nil) else {
+            return;
+        }
+        self.displayLink?.isPaused = true;
+        self.displayLink?.remove(from: .current, forMode: .commonModes);
+        self.displayLink?.invalidate();
+        self.displayLink = nil;
+        self.intDisplayCount = 0;
     }
     
     private func ccFormatteTime(_ intSeconds : Int) -> String {
-        
+        let intSecondsT : Int = intSeconds % 60;
+        let intMinutes : Int = (intSeconds / 60) % 60;
+        let intHours : Int = intSeconds / 3600 ;
+        if intHours < 1 {
+            return ccStringFormat("%02ld : %02ld", intMinutes , intSecondsT);
+        } else {
+            return ccStringFormat("%02ld : %02ld : %02ld", intHours , intMinutes , intSecondsT);
+        }
     }
     
 }
