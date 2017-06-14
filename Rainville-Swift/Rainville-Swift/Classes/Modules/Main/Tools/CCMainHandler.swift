@@ -83,6 +83,7 @@ class CCMainHandler: NSObject {
         tableView.indicatorStyle = UIScrollViewIndicatorStyle.white;
         tableView.separatorInset = UIEdgeInsets.zero;
         tableView.layoutMargins = UIEdgeInsets.zero;
+        tableView.allowsMultipleSelection = false;
         
         return tableView;
     }

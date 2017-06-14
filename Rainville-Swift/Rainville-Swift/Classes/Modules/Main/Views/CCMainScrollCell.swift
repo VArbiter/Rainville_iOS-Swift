@@ -15,7 +15,7 @@ protocol CCCellTimerDelegate {
 typealias CCSelectClosure = (String , Int) -> Void ;
 
 enum CCAudioControl : Int {
-    case next = 0 , previous
+    case none = 0 , next , previous
 }
 
 class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
@@ -79,7 +79,8 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
             if self.integerSelectedIndex < 0 {
                 self.integerSelectedIndex += 1;
             }
-        default: break;
+        default:
+            return;
             
         }
         

@@ -21,11 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             windowT.frame = UIScreen.main.bounds;
             windowT.backgroundColor = UIColor.white;
             
-            let mainVC : CCMainViewController = CCMainViewController.init(nibName: "CCMainViewController", bundle: Bundle.main);
-            windowT.rootViewController = mainVC;
-            
+            windowT.rootViewController = CCMainViewController.init(nibName: "CCMainViewController", bundle: Bundle.main);
             windowT.makeKeyAndVisible();
-            
+
             application.beginReceivingRemoteControlEvents();
             
             return true;
@@ -39,22 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if eventT.type != UIEventType.remoteControl {
                 return;
             }
-            var integerOrder : Int;
-            
-            let eventSubtype = eventT.subtype;
-            
-            switch eventSubtype {
-            case .remoteControlPause : integerOrder = UIEventSubtype.remoteControlPause.rawValue ;
-            case .remoteControlPlay : integerOrder = UIEventSubtype.remoteControlPlay.rawValue ;
-            case .remoteControlNextTrack : integerOrder = UIEventSubtype.remoteControlNextTrack.rawValue ;
-            case .remoteControlPreviousTrack : integerOrder = UIEventSubtype.remoteControlPreviousTrack.rawValue ;
-            case .remoteControlTogglePlayPause : integerOrder = UIEventSubtype.remoteControlTogglePlayPause.rawValue ;
-            default: integerOrder = -1;
-            }
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_),
                                             object: nil,
-                                            userInfo: Dictionary.init(dictionaryLiteral: ("key",integerOrder)));
+                                            userInfo: Dictionary.init(dictionaryLiteral: ("key",eventT.subtype)));
         }
     }
 

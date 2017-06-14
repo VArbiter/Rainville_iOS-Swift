@@ -142,4 +142,9 @@ class CCMainViewController: UIViewController , UITableViewDelegate , UITableView
         
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name(rawValue: _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_),
+                                                  object: nil);
+    }
 }

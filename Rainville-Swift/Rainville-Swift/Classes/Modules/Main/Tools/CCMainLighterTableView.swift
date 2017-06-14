@@ -66,7 +66,6 @@ class CCMainLighterDelegate: NSObject , UITableViewDelegate {
     }
     
 //MARK: - UITableViewDelegate
-    
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.integerSelectedIndex != indexPath.row {
             self.integerSelectedIndex = indexPath.row;
@@ -84,4 +83,5 @@ class CCMainLighterDelegate: NSObject , UITableViewDelegate {
         cell.layoutMargins = UIEdgeInsets.zero;
         cell.separatorInset = UIEdgeInsets.zero;
     }
+    
 }
