@@ -11,7 +11,7 @@ import AVFoundation
 import MediaPlayer
 
 enum CCPlayOption : Int {
-    case CCPlayOptionNone = 0 , CCPlayOptionPlay , CCPlayOptionPause ;
+    case none = 0 , play , pause ;
 }
 
 class CCAudioHandler: NSObject {
@@ -36,7 +36,7 @@ class CCAudioHandler: NSObject {
     private var arrayVolume : Array<Double>? ;
     private var arrayAudioPlayer : Array<AVAudioPlayer>?;
     private var arrayVolumeFrameValue : Array<Double>?;
-    private var option : CCPlayOption = CCPlayOption.CCPlayOptionPause;
+    private var option : CCPlayOption = CCPlayOption.pause;
     private var closure : (() -> Void)? ;
     private var intDisplayCount : Int = 0 ;
     
@@ -52,7 +52,7 @@ class CCAudioHandler: NSObject {
             arraySilent.append(item / 30.0);
         }
         self.arrayVolumeFrameValue = arraySilent;
-        self.ccPausePlayingWithCompleteHandler(closure, CCPlayOption.CCPlayOptionPlay);
+        self.ccPausePlayingWithCompleteHandler(closure, .play);
     }
     func ccPausePlayingWithCompleteHandler(_ closure : @escaping () -> Void ,_ option : CCPlayOption) {
         self.option = option;
@@ -65,11 +65,11 @@ class CCAudioHandler: NSObject {
         }
         self.ccInvalidateDisplayLink();
         switch option {
-        case .CCPlayOptionNone:
+        case .none:
             closureTemp();
-        case .CCPlayOptionPlay:
+        case .play:
             self.ccPlay();
-        case .CCPlayOptionPause:
+        case .pause:
             self.ccPause();
         default:
             closureTemp();
@@ -117,7 +117,7 @@ class CCAudioHandler: NSObject {
             self.intCountTime -= 1;
             let isStop : Bool = self.intCountTime <= 0;
             if isStop {
-                self.option = CCPlayOption.CCPlayOptionPause;
+                self.option = CCPlayOption.pause;
                 self.ccInterPause();
                 self.timer.cancel();
                 self.timer.setCancelHandler(handler: { 
@@ -158,7 +158,7 @@ class CCAudioHandler: NSObject {
     @objc private func ccDisplayAction(_ sender : CADisplayLink) {
         if (self.intDisplayCount > 30 || self.intDisplayCount <= 0) {
             self.ccInvalidateDisplayLink();
-            if self.option == CCPlayOption.CCPlayOptionPause {
+            if self.option == CCPlayOption.pause {
                 for audioPlayer : AVAudioPlayer in self.arrayAudioPlayer! {
                     self.operationQueue.addOperation {
                         audioPlayer.pause();
@@ -185,15 +185,15 @@ class CCAudioHandler: NSObject {
         }
         
         switch self.option {
-        case .CCPlayOptionNone:
+        case .none:
             self.ccInvalidateDisplayLink();
             return;
-        case .CCPlayOptionPlay:
+        case .play:
             self.intDisplayCount += 1;
             for i in 0..<self.arrayAudioPlayer!.count {
                 closure(Float(self.arrayVolumeFrameValue![i]) , true , self.arrayAudioPlayer![i]);
             }
-        case .CCPlayOptionPause:
+        case .pause:
             self.intCountTime -= 1;
             for i in 0..<self.arrayAudioPlayer!.count {
                 closure(Float(self.arrayVolumeFrameValue![i]) , false , self.arrayAudioPlayer![i]);

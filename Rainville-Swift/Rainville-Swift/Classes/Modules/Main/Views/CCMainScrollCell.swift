@@ -15,8 +15,7 @@ protocol CCCellTimerDelegate {
 typealias CCSelectClosure = (String , Int) -> Void ;
 
 enum CCAudioControl : Int {
-    case CCAudioControlNext = 0
-    case CCAudioControlPrevious
+    case next = 0 , previous
 }
 
 class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
@@ -96,12 +95,12 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
     
     func ccSetPlayingAudio(_ sender : CCAudioControl) {
         switch sender {
-        case .CCAudioControlNext:
+        case .next:
             self.integerSelectedIndex += 1 ;
             if self.integerSelectedIndex > self.arrayItem.count - 1 {
                 self.integerSelectedIndex -= 1;
             }
-        case .CCAudioControlPrevious:
+        case .previous:
             self.integerSelectedIndex -= 1;
             if self.integerSelectedIndex < 0 {
                 self.integerSelectedIndex += 1;
