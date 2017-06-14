@@ -121,6 +121,15 @@ class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITable
         }
     }
     
+//MARK: - UIScrollViewDelegate
+    internal func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView != self.tableView {
+            return;
+        }
+        self.headerView?.ccSetUpDownLabel((Double(scrollView.contentOffset.y) < (ccScreenHeight() * 0.3 - 3.0)));
+    }
+    
+//MARK: - Private
     private func ccClickedAction(_ intIndex : Int , withKey stringKey : String) {
         self.handler.ccSetAudioPlayerWithVolumeArray(self.dictionaryTheme[stringKey] as? Array<Float>) { [unowned self] in
             self.handler.ccSetInstantPlayingInfo(stringKey);
