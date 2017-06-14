@@ -74,8 +74,8 @@ class CCMainHandler: NSObject {
         return tableView;
     }
     
-    class func ccCreateMainTableViewWithScrollView(_ scrollView : UIScrollView) -> UITableView {
-        let tableView : UITableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: ccScreenWidth(), height: scrollView.height), style: UITableViewStyle.plain);
+    class func ccCreateMainTableViewWithScrollView(_ height : Double) -> UITableView {
+        let tableView : UITableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: ccScreenWidth(), height: height), style: UITableViewStyle.plain);
         tableView.backgroundColor = UIColor.clear;
         tableView.separatorColor = ccHexColor(0x434D5B);
         tableView.showsHorizontalScrollIndicator = false;

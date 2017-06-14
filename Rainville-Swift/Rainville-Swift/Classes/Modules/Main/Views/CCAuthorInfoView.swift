@@ -17,13 +17,14 @@ class CCAuthorInfoView: UIView {
     @IBOutlet private weak var buttonEmail: UIButton!
     
     
-    class func initFromNib() -> CCAuthorInfoView {
+    class func initFromNib() -> CCAuthorInfoView? {
         let infoView : CCAuthorInfoView? = Bundle.main.loadNibNamed("CCAuthorInfoView", owner: nil, options: nil)?.first as? CCAuthorInfoView;
-        if infoView != nil { 
-            infoView?.frame = CGRect(x: ccScreenWidth() * 2.0, y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
-            infoView?.ccDefaultSettings();
+        if let infoViewT = infoView {
+            infoViewT.frame = CGRect(x: ccScreenWidth() * 2.0, y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
+            infoViewT.ccDefaultSettings();
+            return infoViewT;
         }
-        return infoView!;
+        return nil;
     }
     
     private func ccDefaultSettings() {
@@ -35,7 +36,7 @@ class CCAuthorInfoView: UIView {
     
     private func ccGetVersionString() -> String {
         let dictionaryInfo : Dictionary = Bundle.main.infoDictionary!;
-        return ccStringFormat("\(_CC_VERSION_()): \(dictionaryInfo["CFBundleShortVersionString"] ?? "1.0.0")) \(dictionaryInfo["CFBundleVersion"] ?? "1.0.0")")
+        return "\(_CC_VERSION_()): \(dictionaryInfo["CFBundleShortVersionString"] ?? "1.0.0")) \(dictionaryInfo["CFBundleVersion"] ?? "1.0.0")";
     }
     
     private func ccRotateImageView() {

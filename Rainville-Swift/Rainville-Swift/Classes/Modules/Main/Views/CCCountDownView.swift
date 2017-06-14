@@ -22,13 +22,14 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
     
     private var array : Array<Int>!;
     
-    class func initFromNib() -> CCCountDownView {
+    class func initFromNib() -> CCCountDownView? {
         let viewCountDown : CCCountDownView? = Bundle.main.loadNibNamed("CCCountDownView", owner: nil, options: nil)?.first as? CCCountDownView;
-        if viewCountDown != nil {            
-            viewCountDown?.frame = CGRect(x: ccScreenWidth(), y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
-            viewCountDown?.ccDefaultSettings();
+        if let viewCountDownT = viewCountDown {
+            viewCountDownT.frame = CGRect(x: ccScreenWidth(), y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3);
+            viewCountDownT.ccDefaultSettings();
+            return viewCountDownT;
         }
-        return viewCountDown!;
+        return nil;
     }
     func ccEnableCountingDown(bool : Bool) {
         self.pickerViewTime.alpha = bool ? 1.0 : 0.8;

@@ -12,7 +12,7 @@ protocol CCCellTimerDelegate {
     func ccCellTimerWithSeconds(_ integerSeconds : Int) -> Void ;
 }
 
-typealias CCSelectBlock = (String , Int) -> Void ;
+typealias CCSelectClosure = (String , Int) -> Void ;
 
 enum CCAudioControl : Int {
     case CCAudioControlNext = 0
@@ -59,10 +59,12 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         super.layoutIfNeeded();
         
         self.backgroundColor = UIColor.clear;
+        self.contentView.backgroundColor = UIColor.clear;
+        
         self.scrollViewBottom = CCMainHandler.ccCreateMainBottomScrollViewWithView();
         self.contentView.addSubview(self.scrollViewBottom);
         
-        self.tableView = CCMainHandler.ccCreateMainTableViewWithScrollView(self.scrollViewBottom);
+        self.tableView = CCMainHandler.ccCreateMainTableViewWithScrollView(self.scrollViewBottom.height);
         self.scrollViewBottom.addSubview(self.tableView!);
         
         self.viewInfo = CCAuthorInfoView.initFromNib();
@@ -71,10 +73,10 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         self.viewCountDown = CCCountDownView.initFromNib();
         self.viewCountDown?.delegate = self;
         self.scrollViewBottom.addSubview(self.viewCountDown!);
+//TODO: - 层级问题 .
     }
     
-    func ccConfigureCellWithHandler(_ block : @escaping CCSelectBlock) {
-        self.contentView.backgroundColor = UIColor.clear;
+    func ccConfigureCellWithHandler(_ closure : @escaping CCSelectClosure) {
         
         self.lightTableViewDataSource = CCMainLighterDataSource.init(withReloadClosure: nil);
         if let dataSourceT = self.lightTableViewDataSource {
@@ -83,8 +85,8 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         
         self.lightTableViewDelegate = CCMainLighterDelegate.init(withSelectedClosure: { [unowned self] (intSelectedIndex : Int) in
             self.integerSelectedIndex = intSelectedIndex;
-            if let closure = self.closure {
-                closure(self.arrayItem[intSelectedIndex] as! String , intSelectedIndex);
+            if let closureT = self.closure {
+                closureT(self.arrayItem[intSelectedIndex] as! String , intSelectedIndex);
             };
         });
         if let delegateT = self.lightTableViewDelegate {
