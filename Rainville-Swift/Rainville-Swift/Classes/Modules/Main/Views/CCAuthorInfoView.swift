@@ -30,7 +30,7 @@ class CCAuthorInfoView: UIView {
     private func ccDefaultSettings() {
         self.buttonEmail.titleLabel?.font = UIFont.ccMusketFontWithSize(12.0);
         self.buttonLink.titleLabel?.font = UIFont.ccMusketFontWithSize(12.0);
-        let _ = self.labelAppName.ccMusket(12.0, "\(_CC_APP_NAME_())_Swift");
+        let _ = self.labelAppName.ccMusket(12.0, _CC_APP_NAME_());
         let _ = self.labelVersion.ccMusket(12.0, self.ccGetVersionString());
     }
     

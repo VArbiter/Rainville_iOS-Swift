@@ -143,16 +143,14 @@ class CCAudioHandler: NSObject {
         let arrayWavFile : Array = ccAudioFilePath();
         self.operationQueue.maxConcurrentOperationCount = arrayWavFile.count;
         for url : URL in arrayWavFile {
-            self.operationQueue.addOperation { [unowned self] in
-                do {
-                    let player : AVAudioPlayer = try AVAudioPlayer.init(contentsOf: url);
-                    player.volume = 0.0;
-                    player.numberOfLoops = -1;
-                    self.arrayAudioPlayer.append(player);
-                    player.prepareToPlay();
-                }
-                catch { }
+            do {
+                let player : AVAudioPlayer = try AVAudioPlayer.init(contentsOf: url);
+                player.volume = 0.0;
+                player.numberOfLoops = -1;
+                self.arrayAudioPlayer.append(player);
+                player.prepareToPlay();
             }
+            catch { }
         }
     }
     @objc private func ccDisplayAction(_ sender : CADisplayLink) {

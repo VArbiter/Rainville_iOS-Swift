@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITableViewDataSource , CCPlayActionDelegate , CCCellTimerDelegate {
+class CCMainViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , CCPlayActionDelegate , CCCellTimerDelegate {
 
     @IBOutlet private weak var labelPoem: UILabel!
     
