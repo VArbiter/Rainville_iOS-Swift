@@ -30,19 +30,26 @@ class CCMainLighterDataSource : NSObject , UITableViewDataSource {
         return self.arrayData.count;
     }
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "_CC_CELL_ID_");
-        if let cellNew = cell {
-            return cellNew;
-        } else {
-            cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "_CC_CELL_ID_");
-            cell?.textLabel?.textColor = ccHexColor(0xFEFEFE);
-            cell?.backgroundColor = UIColor.clear;
-            cell?.selectedBackgroundView = UIView.init(frame: (cell?.bounds)!);
-            cell?.selectedBackgroundView?.backgroundColor = ccHexColor(0x22A1A2);
-            cell?.textLabel?.highlightedTextColor = ccHexColor(0x333333);
-            let _ = cell?.textLabel?.ccMusket(15.0, self.arrayData[indexPath.row] as! String);
-            return cell!;
+        let closure = { (cellC : UITableViewCell?) -> Void in
+            if let cellT = cellC {
+                let _ = cellT.textLabel?.ccMusket(15.0, self.arrayData[indexPath.row] as! String);
+            }
         }
+        
+        var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "_CC_CELL_ID_");
+        if let cellT = cell {
+            closure(cellT);
+            return cellT;
+        }
+        
+        cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "_CC_CELL_ID_");
+        cell?.textLabel?.textColor = ccHexColor(0xFEFEFE);
+        cell?.backgroundColor = UIColor.clear;
+        cell?.selectedBackgroundView = UIView.init(frame: (cell?.bounds)!);
+        cell?.selectedBackgroundView?.backgroundColor = ccHexColor(0x22A1A2);
+        cell?.textLabel?.highlightedTextColor = ccHexColor(0x333333);
+        closure(cell);
+        return cell!;
     }
 }
 

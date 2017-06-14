@@ -85,10 +85,9 @@ class CCAudioHandler: NSObject {
         let artImage : MPMediaItemArtwork? = MPMediaItemArtwork.init(boundsSize: image.size) { (size : CGSize) -> UIImage in
             return image;
         };
-        guard (artImage != nil) else {
-            return;
+        if let artImageT = artImage {
+            ditionary.updateValue(artImageT, forKey: MPMediaItemPropertyArtwork);
         }
-        ditionary.updateValue(artImage!, forKey: MPMediaItemPropertyArtwork);
         MPNowPlayingInfoCenter.default().nowPlayingInfo = ditionary;
     }
     
@@ -116,9 +115,9 @@ class CCAudioHandler: NSObject {
         
         self.timer.scheduleRepeating(deadline: .now(), interval: .seconds(1), leeway: .seconds(self.intCountTime));
         self.timer.setEventHandler { [unowned self] in
-#if DEBUG
-            print("\n\(self.intCountTime)");
-#endif
+            CC_Debug_Closure {
+                print("\n_CC_COUNT_TIME_REMAIN_\(self.intCountTime)_");
+            }
             self.intCountTime -= 1;
             let isStop : Bool = self.intCountTime <= 0;
             if isStop {

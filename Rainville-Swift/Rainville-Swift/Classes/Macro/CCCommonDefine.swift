@@ -92,6 +92,12 @@ func CC_Safe_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void){
     closure() ;
 }
 
+func CC_Debug_Closure(_ closure : @escaping () -> Void) {
+#if DEBUG
+    closure();
+#endif
+}
+
 func ccLocalizeString(_ string : String , _ : String) -> String {
     return NSLocalizedString(string, comment: "");
 }
