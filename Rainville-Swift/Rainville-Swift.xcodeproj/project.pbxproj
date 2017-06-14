@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		370E986E1EDE738C007E2692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 370E986D1EDE738C007E2692 /* Assets.xcassets */; };
-		370E98711EDE738C007E2692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 370E986F1EDE738C007E2692 /* LaunchScreen.storyboard */; };
 		370E98811EDE744A007E2692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E987A1EDE744A007E2692 /* AppDelegate.swift */; };
 		370E988B1EDE83F1007E2692 /* CCCommonDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E988A1EDE83F1007E2692 /* CCCommonDefine.swift */; };
 		370E988F1EDE9802007E2692 /* CCObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E988E1EDE9802007E2692 /* CCObjectExtension.swift */; };
@@ -29,14 +28,14 @@
 		370E98C91EDEAD7B007E2692 /* _9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 370E98AF1EDEAD7B007E2692 /* _9.wav */; };
 		370E98CA1EDEAD7B007E2692 /* ArrayItem_CH.plist in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B11EDEAD7B007E2692 /* ArrayItem_CH.plist */; };
 		370E98CB1EDEAD7B007E2692 /* ArrayItem_EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B21EDEAD7B007E2692 /* ArrayItem_EN.plist */; };
-		370E98CC1EDEAD7B007E2692 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B31EDEAD7B007E2692 /* InfoPlist.strings */; };
 		370E98CD1EDEAD7B007E2692 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B51EDEAD7B007E2692 /* Localizable.strings */; };
+		37249B9B1EF1269A0037D6BE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC1F1EDFF5150050BD95 /* Launch Screen.storyboard */; };
+		37249B9C1EF1269F0037D6BE /* Launch Screen_ZH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC201EDFF5150050BD95 /* Launch Screen_ZH.storyboard */; };
+		37249B9D1EF126D10037D6BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 370E98B31EDEAD7B007E2692 /* InfoPlist.strings */; };
 		3729CC041EDFA2B70050BD95 /* CCPickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC031EDFA2B70050BD95 /* CCPickerViewExtension.swift */; };
 		3729CC061EDFA4C40050BD95 /* CCViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC051EDFA4C40050BD95 /* CCViewExtension.swift */; };
 		3729CC091EDFB4D20050BD95 /* CCFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC081EDFB4D20050BD95 /* CCFontExtension.swift */; };
 		3729CC0C1EDFBBE10050BD95 /* CCLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC0B1EDFBBE10050BD95 /* CCLabelExtension.swift */; };
-		3729CC301EDFF5150050BD95 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC1F1EDFF5150050BD95 /* Launch Screen.storyboard */; };
-		3729CC311EDFF5150050BD95 /* Launch Screen_ZH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3729CC201EDFF5150050BD95 /* Launch Screen_ZH.storyboard */; };
 		3729CC321EDFF5150050BD95 /* CCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC231EDFF5150050BD95 /* CCMainViewController.swift */; };
 		3729CC341EDFF5150050BD95 /* CCAudioPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC261EDFF5150050BD95 /* CCAudioPreset.swift */; };
 		3729CC351EDFF5150050BD95 /* CCLocalizedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CC271EDFF5150050BD95 /* CCLocalizedHelper.swift */; };
@@ -56,7 +55,6 @@
 /* Begin PBXFileReference section */
 		370E98631EDE738C007E2692 /* Rainville-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rainville-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		370E986D1EDE738C007E2692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		370E98701EDE738C007E2692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		370E98721EDE738C007E2692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		370E987A1EDE744A007E2692 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		370E988A1EDE83F1007E2692 /* CCCommonDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCCommonDefine.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 			children = (
 				370E98781EDE744A007E2692 /* Classes */,
 				370E986D1EDE738C007E2692 /* Assets.xcassets */,
-				370E986F1EDE738C007E2692 /* LaunchScreen.storyboard */,
 				370E98721EDE738C007E2692 /* Info.plist */,
 			);
 			path = "Rainville-Swift";
@@ -382,23 +379,22 @@
 				37577C641EEFD665008FCF8F /* CCMainViewController.xib in Resources */,
 				370E98C41EDEAD7B007E2692 /* _4.wav in Resources */,
 				3729CC3C1EDFF5150050BD95 /* CCMainHeaderView.xib in Resources */,
-				370E98CC1EDEAD7B007E2692 /* InfoPlist.strings in Resources */,
+				37249B9D1EF126D10037D6BE /* InfoPlist.strings in Resources */,
+				37249B9B1EF1269A0037D6BE /* Launch Screen.storyboard in Resources */,
 				3729CC3A1EDFF5150050BD95 /* CCCountDownView.xib in Resources */,
 				370E98C11EDEAD7B007E2692 /* _1.wav in Resources */,
 				3729CC401EDFF6950050BD95 /* CCAuthorInfoView.xib in Resources */,
 				370E98BD1EDEAD7B007E2692 /* ic_launcher_144.png in Resources */,
 				370E98CB1EDEAD7B007E2692 /* ArrayItem_EN.plist in Resources */,
 				370E98BB1EDEAD7B007E2692 /* Default-568h@2x.png in Resources */,
-				3729CC301EDFF5150050BD95 /* Launch Screen.storyboard in Resources */,
 				370E98C31EDEAD7B007E2692 /* _3.wav in Resources */,
+				37249B9C1EF1269F0037D6BE /* Launch Screen_ZH.storyboard in Resources */,
 				370E98BE1EDEAD7B007E2692 /* weather.otf in Resources */,
 				370E98BF1EDEAD7B007E2692 /* Musket regular.otf in Resources */,
-				3729CC311EDFF5150050BD95 /* Launch Screen_ZH.storyboard in Resources */,
 				370E98CA1EDEAD7B007E2692 /* ArrayItem_CH.plist in Resources */,
 				370E98C71EDEAD7B007E2692 /* _7.wav in Resources */,
 				370E98C51EDEAD7B007E2692 /* _5.wav in Resources */,
 				370E98CD1EDEAD7B007E2692 /* Localizable.strings in Resources */,
-				370E98711EDE738C007E2692 /* LaunchScreen.storyboard in Resources */,
 				370E98C61EDEAD7B007E2692 /* _6.wav in Resources */,
 				370E98BC1EDEAD7B007E2692 /* elegant.ttf in Resources */,
 				370E98C21EDEAD7B007E2692 /* _2.wav in Resources */,
@@ -439,14 +435,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		370E986F1EDE738C007E2692 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				370E98701EDE738C007E2692 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		370E98B31EDEAD7B007E2692 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

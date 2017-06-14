@@ -36,7 +36,7 @@ class CCAuthorInfoView: UIView {
     
     private func ccGetVersionString() -> String {
         let dictionaryInfo : Dictionary = Bundle.main.infoDictionary!;
-        return "\(_CC_VERSION_()): \(dictionaryInfo["CFBundleShortVersionString"] ?? "1.0.0") | \(dictionaryInfo["CFBundleVersion"] ?? "1.0.0")";
+        return "\(_CC_VERSION_()): \(dictionaryInfo["CFBundleShortVersionString"] ?? "1.0.0") [\(dictionaryInfo["CFBundleVersion"] ?? "1.0.0")]";
     }
     
     private func ccRotateImageView() {
