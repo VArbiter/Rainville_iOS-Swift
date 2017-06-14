@@ -13,15 +13,13 @@ let _CC_APP_DID_RECEIVE_REMOTE_NOTIFICATION_ : String = "CC_APP_DID_RECEIVE_REMO
 
 typealias CCCommonClosure = (Bool , Any?) -> Void ;
 
-let ccNULL = Optional<Any>.none!;
-
 func CCLog <T> (_ string : T ,
             stringFileName : String = #file ,
             stringFunction : String = #function ,
             integerLine : Int = #line) -> Void {
-    #if DEBUG
+#if DEBUG
         print("_CC_LOG_ \n\(stringFileName) \n\(stringFunction) \n\(integerLine) \n\(string)");
-    #endif
+#endif
 }
 
 func ccStringFormat<T>(_ string : T) -> String {
@@ -55,14 +53,14 @@ func ccRGBAColor(_ R : Float ,_ G : Float ,_ B : Float ,_ A : Float) -> UIColor 
     return UIColor.init(colorLiteralRed: R, green: G, blue: B, alpha: A);
 }
 
-func ccURL (_ string : String ,_ isFile : Bool) -> URL {
+func ccURL (_ string : String ,_ isFile : Bool) -> URL? {
     if !string.isStringValued {
-        return Optional.none!; // 为 nil
+        return nil; 
     }
     if isFile {
         return URL.init(fileURLWithPath: string);
     }
-    return URL.init(string: string)!;
+    return URL.init(string: string);
 }
 
 func ccImage(_ string : String) -> UIImage{
@@ -77,7 +75,7 @@ func ccImageWithCache(_ string : String ,_ isCache : Bool) -> UIImage {
 }
 
 func CC_Safe_UI_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void) {
-    if (closureNil == nil) {
+    guard (closureNil != nil) else {
         return ;
     }
     
@@ -92,8 +90,8 @@ func CC_Safe_UI_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void) {
 }
 
 func CC_Safe_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void){
-    if (closureNil == nil) {
-        return;
+    guard (closureNil != nil) else {
+        return ;
     }
     closure() ;
 }

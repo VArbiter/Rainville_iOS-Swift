@@ -16,8 +16,8 @@ class CCMainLighterDataSource : NSObject , UITableViewDataSource {
     }()
     
     convenience init(withReloadClosure closure : (() -> Void)?) {
-        if let closureNew = closure {
-            closureNew();
+        if let closureT = closure {
+            closureT();
         }
         self.init();
     }
@@ -51,23 +51,21 @@ class CCMainLighterDataSource : NSObject , UITableViewDataSource {
 class CCMainLighterDelegate: NSObject , UITableViewDelegate {
     
     private var closure : ((Int) -> Void)? = nil;
-    private var integerSelectedIndex : Int = 0 ;
+    private var integerSelectedIndex : Int = -1 ;
     
     convenience init(withSelectedClosure closure : @escaping (Int) -> Void) {
         self.init();
         self.closure = closure;
-        self.integerSelectedIndex = -1;
     }
     
 //MARK: - UITableViewDelegate
     
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if self.integerSelectedIndex == indexPath.row {
+        if self.integerSelectedIndex != indexPath.row {
             self.integerSelectedIndex = indexPath.row;
-            weak var pSelf = self ;
-            CC_Safe_UI_Closure(self.closure, { 
-                pSelf?.closure!((pSelf?.integerSelectedIndex)!);
-            });
+            if let closureT = self.closure {
+                closureT(self.integerSelectedIndex)
+            }
         }
     }
     

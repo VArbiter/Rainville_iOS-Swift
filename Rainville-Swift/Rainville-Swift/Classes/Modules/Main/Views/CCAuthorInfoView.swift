@@ -51,16 +51,19 @@ class CCAuthorInfoView: UIView {
     }
     
     @IBAction private func ccButtonLinkAction(_ sender: UIButton) {
-        let url : URL = ccURL("https://github.com/VArbiter", false);
+        let url : URL? = ccURL("https://github.com/VArbiter", false);
+        guard (url != nil) else {
+            return ;
+        }
         if #available(iOS 10, *) {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
+            if UIApplication.shared.canOpenURL(url!) {
+                UIApplication.shared.open(url!, options: [:], completionHandler: { (success) in
                     print("success");
                 });
             }
         } else {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.openURL(url);
+            if UIApplication.shared.canOpenURL(url!) {
+                UIApplication.shared.openURL(url!);
             }
         }
     }

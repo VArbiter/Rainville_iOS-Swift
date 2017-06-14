@@ -122,10 +122,12 @@ class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITable
     }
     
     private func ccClickedAction(_ intIndex : Int , withKey stringKey : String) {
-        
+        self.handler.ccSetAudioPlayerWithVolumeArray(self.dictionaryTheme[stringKey] as? Array<Float>) { [unowned self] in
+            self.handler.ccSetInstantPlayingInfo(stringKey);
+        }
+        self.headerView?.ccSetButtonStatus(bool: true);
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         

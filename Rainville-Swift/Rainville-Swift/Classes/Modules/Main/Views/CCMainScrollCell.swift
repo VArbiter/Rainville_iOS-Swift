@@ -48,6 +48,7 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
     func ccConfigureCellWithHandler(_ closure : @escaping CCSelectClosure) {
         self.ccLayoutSubViews();
         
+        
         self.lightTableViewDataSource = CCMainLighterDataSource.init(withReloadClosure: nil);
         if let dataSourceT = self.lightTableViewDataSource {
             self.tableView.dataSource = dataSourceT;
@@ -63,6 +64,8 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         if let delegateT = self.lightTableViewDelegate {
             self.tableView.delegate = delegateT;
         }
+        
+        self.closure = closure;
     }
     
     func ccSetPlayingAudio(_ sender : CCAudioControl) {

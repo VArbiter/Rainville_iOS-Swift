@@ -33,22 +33,22 @@ class CCAudioHandler: NSObject {
     private var displayLink : CADisplayLink? ;
     private var timer : DispatchSourceTimer! ;
     private var intCountTime : Int = 0;
-    private var arrayVolume : Array<Double>? ;
-    private var arrayAudioPlayer : Array<AVAudioPlayer>?;
-    private var arrayVolumeFrameValue : Array<Double>?;
+    private var arrayVolume : Array<Float>? ;
+    private var arrayAudioPlayer : Array<AVAudioPlayer> = [];
+    private var arrayVolumeFrameValue : Array<Float>?;
     private var option : CCPlayOption = CCPlayOption.pause;
     private var closure : (() -> Void)? ;
     private var intDisplayCount : Int = 0 ;
     
 //MARK: - Public
-    func ccSetAudioPlayerWithVolumeArray(_ arrayVolume : Array<Double>? , _ closure : @escaping () -> Void) {
+    func ccSetAudioPlayerWithVolumeArray(_ arrayVolume : Array<Float>? , _ closure : @escaping () -> Void) {
         guard (arrayVolume != nil) else {
             return;
         }
         self.arrayVolume = arrayVolume;
         
-        var arraySilent : Array <Double> = [];
-        for item : Double in self.arrayVolume! {
+        var arraySilent : Array <Float> = [];
+        for item : Float in self.arrayVolume! {
             arraySilent.append(item / 30.0);
         }
         self.arrayVolumeFrameValue = arraySilent;
@@ -81,11 +81,14 @@ class CCAudioHandler: NSObject {
         ditionary.updateValue(stringKey, forKey: MPMediaItemPropertyTitle);
         ditionary.updateValue(_CC_APP_NAME_(), forKey: MPMediaItemPropertyArtist);
         
-        let image : UIImage! = UIImage.init(named: "ic_launcher");
-        let artImage : MPMediaItemArtwork! = MPMediaItemArtwork.init(boundsSize: image.size) { (size : CGSize) -> UIImage in
+        let image : UIImage! = UIImage.init(named: "ic_launcher_144");
+        let artImage : MPMediaItemArtwork? = MPMediaItemArtwork.init(boundsSize: image.size) { (size : CGSize) -> UIImage in
             return image;
         };
-        ditionary.updateValue(artImage, forKey: MPMediaItemPropertyArtwork);
+        guard (artImage != nil) else {
+            return;
+        }
+        ditionary.updateValue(artImage!, forKey: MPMediaItemPropertyArtwork);
         MPNowPlayingInfoCenter.default().nowPlayingInfo = ditionary;
     }
     
@@ -136,10 +139,6 @@ class CCAudioHandler: NSObject {
     
 //MARK: - Private
     private func ccDefaultSettings() {
-        if (self.arrayAudioPlayer?.count)! > 0 {
-            self.arrayAudioPlayer!.removeAll();
-        }
-        self.arrayAudioPlayer = [];
         let arrayWavFile : Array = ccAudioFilePath();
         self.operationQueue.maxConcurrentOperationCount = arrayWavFile.count;
         for url : URL in arrayWavFile {
@@ -148,7 +147,7 @@ class CCAudioHandler: NSObject {
                     let player : AVAudioPlayer = try AVAudioPlayer.init(contentsOf: url);
                     player.volume = 0.0;
                     player.numberOfLoops = -1;
-                    self.arrayAudioPlayer!.append(player);
+                    self.arrayAudioPlayer.append(player);
                     player.prepareToPlay();
                 }
                 catch { }
@@ -159,7 +158,7 @@ class CCAudioHandler: NSObject {
         if (self.intDisplayCount > 30 || self.intDisplayCount <= 0) {
             self.ccInvalidateDisplayLink();
             if self.option == CCPlayOption.pause {
-                for audioPlayer : AVAudioPlayer in self.arrayAudioPlayer! {
+                for audioPlayer : AVAudioPlayer in self.arrayAudioPlayer {
                     self.operationQueue.addOperation {
                         audioPlayer.pause();
                     }
@@ -184,19 +183,24 @@ class CCAudioHandler: NSObject {
             }
         }
         
+        guard (self.arrayVolumeFrameValue != nil) else {
+            self.ccInvalidateDisplayLink();
+            return;
+        }
+        
         switch self.option {
         case .none:
             self.ccInvalidateDisplayLink();
             return;
         case .play:
             self.intDisplayCount += 1;
-            for i in 0..<self.arrayAudioPlayer!.count {
-                closure(Float(self.arrayVolumeFrameValue![i]) , true , self.arrayAudioPlayer![i]);
+            for i in 0..<self.arrayAudioPlayer.count {
+                closure(self.arrayVolumeFrameValue![i] , true , self.arrayAudioPlayer[i]);
             }
         case .pause:
             self.intCountTime -= 1;
-            for i in 0..<self.arrayAudioPlayer!.count {
-                closure(Float(self.arrayVolumeFrameValue![i]) , false , self.arrayAudioPlayer![i]);
+            for i in 0..<self.arrayAudioPlayer.count {
+                closure(self.arrayVolumeFrameValue![i] , false , self.arrayAudioPlayer[i]);
             }
         default:
             self.ccInvalidateDisplayLink();
@@ -210,14 +214,14 @@ class CCAudioHandler: NSObject {
             let _ = self.ccDisplayLink();
         }
         
-        let audioPlayer : AVAudioPlayer?  = self.arrayAudioPlayer?.first;
+        let audioPlayer : AVAudioPlayer?  = self.arrayAudioPlayer.first;
         if let audioPlayerT = audioPlayer {
             if audioPlayerT.isPlaying {
-                for i in 0..<self.arrayAudioPlayer!.count {
+                for i in 0..<self.arrayAudioPlayer.count {
                     self.operationQueue.addOperation {
-                        let tempPlayer : AVAudioPlayer? = self.arrayAudioPlayer?[i];
+                        let tempPlayer : AVAudioPlayer? = self.arrayAudioPlayer[i];
                         if let tempPlayerT = tempPlayer {
-                            tempPlayerT.volume = Float(self.arrayVolume![i]);
+                            tempPlayerT.volume = self.arrayVolume![i];
                         }
                     }
                 }
@@ -237,7 +241,7 @@ class CCAudioHandler: NSObject {
     private func ccInterPause() {
         self.intCountTime = 0;
         self.ccInvalidateDisplayLink();
-        for item : AVAudioPlayer in self.arrayAudioPlayer! {
+        for item : AVAudioPlayer in self.arrayAudioPlayer {
             item.pause();
         }
         if let closureT = self.closure {

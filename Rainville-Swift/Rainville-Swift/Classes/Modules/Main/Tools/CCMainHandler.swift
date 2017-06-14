@@ -29,7 +29,7 @@ class CCMainHandler: NSObject {
         }
         
         CC_Safe_Closure(closure) {
-            closure(isHeadphoneInsert , ccNULL);
+            closure(isHeadphoneInsert , nil);
         }
         
         return isHeadphoneInsert;
@@ -45,7 +45,7 @@ class CCMainHandler: NSObject {
         }
         
         CC_Safe_Closure(closure) {
-            closure(isMuteEnabled , ccNULL);
+            closure(isMuteEnabled , nil);
         }
         return isMuteEnabled;
     }

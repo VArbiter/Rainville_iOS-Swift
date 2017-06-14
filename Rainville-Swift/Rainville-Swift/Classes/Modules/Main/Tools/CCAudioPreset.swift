@@ -86,7 +86,9 @@ func ccAudioFilePath () -> Array<URL> {
     var array : Array<URL> = [];
     for i in 0...9 {
         let stringFilePath : String = Bundle.main.path(forResource: "_\(i)", ofType: "wav")!;
-        array.append(ccURL(stringFilePath, false));
+        if let url = ccURL(stringFilePath, false) {
+            array.append(url);
+        }
     }
     return array ;
 }
