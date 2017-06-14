@@ -112,25 +112,27 @@ class CCAudioHandler: NSObject {
         
         self.intCountTime = intSeconds;
         let queue : DispatchQueue = DispatchQueue.global(qos: .default);
-        self.timer = DispatchSource.makeTimerSource(queue: queue);
+        self.timer = DispatchSource.makeTimerSource(flags: [], queue: queue);
         
-        let intervalTime : DispatchTimeInterval = .seconds(self.intCountTime);
-        self.timer.scheduleRepeating(deadline: .now() + intervalTime, interval: intervalTime);
+        self.timer.scheduleRepeating(deadline: .now(), interval: .seconds(1), leeway: .seconds(self.intCountTime));
         self.timer.setEventHandler { [unowned self] in
+#if DEBUG
+            print("\n\(self.intCountTime)");
+#endif
             self.intCountTime -= 1;
             let isStop : Bool = self.intCountTime <= 0;
             if isStop {
                 self.option = CCPlayOption.pause;
                 self.ccInterPause();
                 self.timer.cancel();
-                self.timer.setCancelHandler(handler: { 
-                    CC_Safe_Closure(closure, {
+                self.timer.setCancelHandler(handler: {
+                    CC_Safe_UI_Closure(closure, {
                         closure(true , "00 : 00");
                     })
                 })
                 self.timer = nil;
             }
-            CC_Safe_Closure(closure, { 
+            CC_Safe_UI_Closure(closure, {
                 closure(isStop , self.ccFormatteTime(self.intCountTime));
             })
         }
@@ -273,9 +275,9 @@ class CCAudioHandler: NSObject {
         let intMinutes : Int = (intSeconds / 60) % 60;
         let intHours : Int = intSeconds / 3600 ;
         if intHours < 1 {
-            return ccStringFormat("%02ld : %02ld", intMinutes , intSecondsT);
+            return String(format: "%02ld : %02ld", intMinutes , intSecondsT);
         } else {
-            return ccStringFormat("%02ld : %02ld : %02ld", intHours , intMinutes , intSecondsT);
+            return String(format: "%02ld : %02ld : %02ld", intHours , intMinutes , intSecondsT);
         }
     }
     

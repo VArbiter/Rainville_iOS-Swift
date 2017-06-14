@@ -48,7 +48,6 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
     func ccConfigureCellWithHandler(_ closure : @escaping CCSelectClosure) {
         self.ccLayoutSubViews();
         
-        
         self.lightTableViewDataSource = CCMainLighterDataSource.init(withReloadClosure: nil);
         if let dataSourceT = self.lightTableViewDataSource {
             self.tableView.dataSource = dataSourceT;
@@ -105,6 +104,8 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         self.scrollViewBottom.addSubview(self.tableView);
         self.scrollViewBottom.addSubview(self.viewInfo!);
         self.scrollViewBottom.addSubview(self.viewCountDown!);
+        
+        self.viewCountDown?.delegate = self;
     }
     
 //MARK: - CCCountDownDelegate

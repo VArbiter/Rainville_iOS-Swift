@@ -22,10 +22,6 @@ func CCLog <T> (_ string : T ,
 #endif
 }
 
-func ccStringFormat<T>(_ string : T) -> String {
-    return String.init(format: "%@", string as! CVarArg);
-}
-
 func ccScreenWidth() -> Double {
     return Double(UIScreen.main.bounds.size.width);
 }
