@@ -23,10 +23,12 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
     var delegate : CCCellTimerDelegate?;
     
     private lazy var scrollViewBottom: UIScrollView = {
-        return CCMainHandler.ccCreateMainBottomScrollViewWithView()
+        return CCMainHandler.ccCreateMainBottomScrollView()
     }()
     
-    private var tableView : UITableView! ;
+    private lazy var tableView : UITableView = {
+        return CCMainHandler.ccCreateMainTableView();
+    }();
     
     private var viewInfo : CCAuthorInfoView? ;
     private var viewCountDown : CCCountDownView? ;
@@ -39,43 +41,8 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
     private var lightTableViewDelegate : CCMainLighterDelegate?;
     private var lightTableViewDataSource : CCMainLighterDataSource?;
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier);
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    convenience init(_ frame : CGRect) {
-        self.init();
-        self.frame = frame;
-        self.setNeedsLayout();
-        self.layoutIfNeeded();
-    }
-    
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded();
-        
-        self.backgroundColor = UIColor.clear;
-        self.contentView.backgroundColor = UIColor.clear;
-        
-        self.scrollViewBottom = CCMainHandler.ccCreateMainBottomScrollViewWithView();
-        self.contentView.addSubview(self.scrollViewBottom);
-        
-        self.tableView = CCMainHandler.ccCreateMainTableViewWithScrollView(self.scrollViewBottom.height);
-        self.scrollViewBottom.addSubview(self.tableView!);
-        
-        self.viewInfo = CCAuthorInfoView.initFromNib();
-        self.scrollViewBottom.addSubview(self.viewInfo!);
-        
-        self.viewCountDown = CCCountDownView.initFromNib();
-        self.viewCountDown?.delegate = self;
-        self.scrollViewBottom.addSubview(self.viewCountDown!);
-//TODO: - 层级问题 .
-    }
-    
     func ccConfigureCellWithHandler(_ closure : @escaping CCSelectClosure) {
+        self.ccLayoutSubViews();
         
         self.lightTableViewDataSource = CCMainLighterDataSource.init(withReloadClosure: nil);
         if let dataSourceT = self.lightTableViewDataSource {
@@ -120,6 +87,23 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         if !isEnable {
             self.viewCountDown?.ccCancelAndResetCountingDown();
         }
+    }
+    
+//MARK: - Private
+    private func ccLayoutSubViews() {
+        self.backgroundColor = UIColor.clear;
+        self.contentView.backgroundColor = UIColor.clear;
+        
+        self.contentView.addSubview(self.scrollViewBottom);
+        
+        self.scrollViewBottom.addSubview(self.tableView);
+        
+        self.viewInfo = CCAuthorInfoView.initFromNib();
+        self.scrollViewBottom.addSubview(self.viewInfo!);
+        
+        self.viewCountDown = CCCountDownView.initFromNib();
+        self.viewCountDown?.delegate = self;
+        self.scrollViewBottom.addSubview(self.viewCountDown!);
     }
     
 //MARK: - CCCountDownDelegate

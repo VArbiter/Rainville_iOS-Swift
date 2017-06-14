@@ -6,5 +6,5 @@
   Copyright © 2017年 冯明庆. All rights reserved.
 */
 
-CFBundleDisplayName = "Rainville";
+CFBundleDisplayName = "Rainville_st";
 UILaunchStoryboardName = "Launch Screen";

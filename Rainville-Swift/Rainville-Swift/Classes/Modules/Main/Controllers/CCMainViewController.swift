@@ -16,7 +16,7 @@ class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITable
         return CCMainHandler.ccCreateContentTableView();
     }()
     private lazy var cell: CCMainScrollCell = {
-        return CCMainScrollCell.init(CGRect.null);
+        return CCMainScrollCell.init();
     }()
     private lazy var headerView: CCMainHeaderView? = {
         return CCMainHeaderView.initFromNib();

@@ -50,7 +50,7 @@ class CCMainHandler: NSObject {
         return isMuteEnabled;
     }
     
-    class func ccCreateMainBottomScrollViewWithView() -> UIScrollView {
+    class func ccCreateMainBottomScrollView() -> UIScrollView {
         let scrollView : UIScrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3));
         scrollView.showsVerticalScrollIndicator = false;
         scrollView.showsHorizontalScrollIndicator = false;
@@ -74,8 +74,8 @@ class CCMainHandler: NSObject {
         return tableView;
     }
     
-    class func ccCreateMainTableViewWithScrollView(_ height : Double) -> UITableView {
-        let tableView : UITableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: ccScreenWidth(), height: height), style: UITableViewStyle.plain);
+    class func ccCreateMainTableView() -> UITableView {
+        let tableView : UITableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: ccScreenWidth(), height: ccScreenHeight() * 0.3), style: UITableViewStyle.plain);
         tableView.backgroundColor = UIColor.clear;
         tableView.separatorColor = ccHexColor(0x434D5B);
         tableView.showsHorizontalScrollIndicator = false;
