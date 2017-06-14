@@ -63,7 +63,7 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
         return CGFloat(ccScreenHeight() * 0.3 * 0.35) ;
     }
     internal func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let closure = { [unowned self] (labelC : UILabel) -> UILabel in
+        let closure = {(labelC : UILabel) -> UILabel in
             labelC.font = UIFont.ccMusketFontWithSize(11.0);
             labelC.textAlignment = NSTextAlignment.center;
             labelC.backgroundColor = UIColor.clear;

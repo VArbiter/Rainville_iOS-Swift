@@ -167,7 +167,7 @@ class CCAudioHandler: NSObject {
             }
         }
         
-        let closure = { [unowned self] (_ volume : Float , _ isAscending : Bool , _ audioPlayer : AVAudioPlayer ) -> () in
+        let closure = {(_ volume : Float , _ isAscending : Bool , _ audioPlayer : AVAudioPlayer ) -> Void in
             self.operationQueue.addOperation {
                 if isAscending {
                     if (!audioPlayer.isPlaying) {
@@ -203,7 +203,7 @@ class CCAudioHandler: NSObject {
     }
     
     private func ccPlay() {
-        let closure = { [unowned self] in
+        let closure = {
             self.ccInvalidateDisplayLink();
             let _ = self.ccDisplayLink();
         }

@@ -35,10 +35,10 @@ func ccHexColor(_ int : Int) -> UIColor {
 }
 
 func ccHexColorAlpha(_ int : Int ,_ floatAlpha : Float) -> UIColor {
-    return UIColor.init(colorLiteralRed: Float((int & 0xFF0000) >> 16) / 255.0 ,
-                        green:  Float((int & 0xFF00) >> 8) / 255.0,
-                        blue:  Float(int & 0xFF) / 255.0,
-                        alpha: floatAlpha);
+    return ccRGBAColor(Float((int & 0xFF0000) >> 16) / 255.0,
+                       Float((int & 0xFF00) >> 8) / 255.0,
+                       Float(int & 0xFF) / 255.0,
+                       floatAlpha);
 }
 
 func ccRGBColor(_ R : Float ,_ G : Float ,_ B : Float) -> UIColor {

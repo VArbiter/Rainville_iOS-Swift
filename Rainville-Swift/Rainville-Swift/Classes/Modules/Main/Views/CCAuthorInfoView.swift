@@ -58,7 +58,7 @@ class CCAuthorInfoView: UIView {
         if #available(iOS 10, *) {
             if UIApplication.shared.canOpenURL(url!) {
                 UIApplication.shared.open(url!, options: [:], completionHandler: { (success) in
-                    print("success");
+                    CCLog("success");
                 });
             }
         } else {
