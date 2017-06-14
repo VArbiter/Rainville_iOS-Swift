@@ -30,8 +30,12 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         return CCMainHandler.ccCreateMainTableView();
     }();
     
-    private var viewInfo : CCAuthorInfoView? ;
-    private var viewCountDown : CCCountDownView? ;
+    private lazy var viewInfo : CCAuthorInfoView? = {
+        return CCAuthorInfoView.initFromNib();
+    }();
+    private lazy var viewCountDown : CCCountDownView? = {
+        return CCCountDownView.initFromNib();
+    }();
     
     private lazy var arrayItem: Array = {
         return  _CC_ARRAY_ITEM_();
@@ -95,14 +99,8 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
         self.contentView.backgroundColor = UIColor.clear;
         
         self.contentView.addSubview(self.scrollViewBottom);
-        
         self.scrollViewBottom.addSubview(self.tableView);
-        
-        self.viewInfo = CCAuthorInfoView.initFromNib();
         self.scrollViewBottom.addSubview(self.viewInfo!);
-        
-        self.viewCountDown = CCCountDownView.initFromNib();
-        self.viewCountDown?.delegate = self;
         self.scrollViewBottom.addSubview(self.viewCountDown!);
     }
     

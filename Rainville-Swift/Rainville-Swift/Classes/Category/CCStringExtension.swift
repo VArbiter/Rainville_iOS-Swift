@@ -12,11 +12,8 @@ extension String {
     
     var isStringValued : Bool {
         get {
-            if self.isKind(of: String.self as! AnyClass) {
-                if self.characters.count > 0 {
-                    return true;
-                }
-                return false;
+            if self.characters.count > 0 {
+                return true;
             }
             return false;
         }
