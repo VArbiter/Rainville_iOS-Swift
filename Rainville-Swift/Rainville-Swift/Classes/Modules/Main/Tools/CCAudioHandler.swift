@@ -65,8 +65,6 @@ class CCAudioHandler: NSObject {
         }
         self.ccInvalidateDisplayLink();
         switch option {
-        case .none:
-            closureTemp();
         case .play:
             self.ccPlay();
         case .pause:
@@ -188,9 +186,6 @@ class CCAudioHandler: NSObject {
         }
         
         switch self.option {
-        case .none:
-            self.ccInvalidateDisplayLink();
-            return;
         case .play:
             self.intDisplayCount += 1;
             for i in 0..<self.arrayAudioPlayer.count {

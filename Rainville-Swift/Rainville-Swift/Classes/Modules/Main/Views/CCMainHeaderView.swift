@@ -65,7 +65,7 @@ class CCMainHeaderView: UIView {
         let _ = self.labelDesc.ccMusketWithString(_CC_APP_DESP_());
         self.labelDesc.sizeToFit();
         
-        let _ = self.labelIcon.ccWeatherIcons(70.0, "\\uf006");
+        let _ = self.labelIcon.ccWeatherIcons(70.0, "\u{f006}"); // 特殊字体调用
         self.labelIcon.sizeToFit();
         
         let _ = self.labelCountDown.ccMusket(25.0, "00 : 00");
