@@ -88,6 +88,7 @@ class CCMainScrollCell: UITableViewCell, CCCountDownDelegate {
                 closureT(self.arrayItem[intSelectedIndex] as! String , intSelectedIndex);
             };
         });
+        
         if let delegateT = self.lightTableViewDelegate {
             self.tableView.delegate = delegateT;
         }

@@ -18,7 +18,7 @@ class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITable
     private lazy var cell: CCMainScrollCell = {
         return CCMainScrollCell.init(CGRect.null);
     }()
-    private lazy var headerView: CCMainHeaderView = {
+    private lazy var headerView: CCMainHeaderView? = {
         return CCMainHeaderView.initFromNib();
     }()
     private lazy var handler: CCAudioHandler = {
@@ -47,7 +47,7 @@ class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITable
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         
-        self.headerView.delegate = self;
+        self.headerView?.delegate = self;
         self.tableView.tableHeaderView = self.headerView;
         
         self.cell.delegate = self;
@@ -69,17 +69,17 @@ class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITable
             case .remoteControlPause:
                 self.handler.ccPausePlayingWithCompleteHandler({ 
                     CCLog("_CC_PAUSE_SUCCEED_");
-                }, .CCPlayOptionPause);
-                self.headerView.ccSetButtonStatus(bool: false);
+                }, .pause);
+                self.headerView?.ccSetButtonStatus(bool: false);
             case .remoteControlPlay:
                 self.handler.ccPausePlayingWithCompleteHandler({
                     CCLog("_CC_PLAY_SUCCEED_");
-                }, .CCPlayOptionPlay);
-                self.headerView.ccSetButtonStatus(bool: true);
+                }, .play);
+                self.headerView?.ccSetButtonStatus(bool: true);
             case .remoteControlNextTrack:
-                self.cell.ccSetPlayingAudio(.CCAudioControlNext);
+                self.cell.ccSetPlayingAudio(.next);
             case .remoteControlPreviousTrack:
-                self.cell.ccSetPlayingAudio(.CCAudioControlPrevious);
+                self.cell.ccSetPlayingAudio(.previous);
             default:
                 return;
             }
@@ -104,7 +104,7 @@ class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITable
     internal func ccHeaderButtonActionWithPlayOrPause(bool: Bool) {
         self.handler.ccPausePlayingWithCompleteHandler({
                 CCLog("_CC_PAUSE/PLAY_SUCCEED_");
-            }, (bool ? CCPlayOption.CCPlayOptionPlay : CCPlayOption.CCPlayOptionPause));
+            }, (bool ? .play : .pause));
         self.cell.ccSetTimer(bool);
         if !bool {
             self.ccCellTimerWithSeconds(0);
@@ -115,9 +115,9 @@ class CCMainViewController: CCBaseViewController , UITableViewDelegate , UITable
     internal func ccCellTimerWithSeconds(_ integerSeconds: Int) {
         self.handler.ccSetAutoStopWithSeconds(integerSeconds) { [unowned self] (isSucceed : Bool, item : Any?) in
             if let itemT = item {
-                self.headerView.labelCountDown.text = itemT as? String;
+                self.headerView?.labelCountDown.text = itemT as? String;
             }
-            self.headerView.labelCountDown.isHidden = isSucceed;
+            self.headerView?.labelCountDown.isHidden = isSucceed;
         }
     }
     
