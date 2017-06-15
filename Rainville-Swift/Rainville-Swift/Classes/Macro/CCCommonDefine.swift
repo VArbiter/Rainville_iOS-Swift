@@ -70,7 +70,7 @@ func ccImageWithCache(_ string : String ,_ isCache : Bool) -> UIImage {
     return UIImage.init(contentsOfFile: string)!;
 }
 
-func CC_Safe_UI_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void) {
+func CC_Safe_UI_Closure(_ closureNil : Any? ,_ closure : () -> Void) {
     guard (closureNil != nil) else {
         return ;
     }
@@ -85,14 +85,14 @@ func CC_Safe_UI_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void) {
     }
 }
 
-func CC_Safe_Closure(_ closureNil : Any? ,_ closure : @escaping () -> Void){
+func CC_Safe_Closure(_ closureNil : Any? ,_ closure : () -> Void){
     guard (closureNil != nil) else {
         return ;
     }
     closure() ;
 }
 
-func CC_Debug_Closure(_ closure : @escaping () -> Void) {
+func CC_Debug_Closure(_ closure : () -> Void) {
 #if DEBUG
     closure();
 #endif

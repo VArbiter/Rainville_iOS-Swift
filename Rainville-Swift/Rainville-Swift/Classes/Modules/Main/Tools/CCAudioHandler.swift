@@ -80,8 +80,13 @@ class CCAudioHandler: NSObject {
         ditionary.updateValue(_CC_APP_NAME_(), forKey: MPMediaItemPropertyArtist);
         
         let image : UIImage! = UIImage.init(named: "ic_launcher_144");
-        let artImage : MPMediaItemArtwork? = MPMediaItemArtwork.init(boundsSize: image.size) { (size : CGSize) -> UIImage in
-            return image;
+        var artImage : MPMediaItemArtwork? ;
+        if #available(iOS 10.0, *) {
+            artImage = MPMediaItemArtwork.init(boundsSize: image.size) { (size : CGSize) -> UIImage in
+                return image;
+            }
+        } else {
+            artImage = MPMediaItemArtwork.init(image: image);
         };
         if let artImageT = artImage {
             ditionary.updateValue(artImageT, forKey: MPMediaItemPropertyArtwork);
@@ -246,7 +251,11 @@ class CCAudioHandler: NSObject {
     private func ccDisplayLink() -> CADisplayLink {
         self.ccInvalidateDisplayLink();
         let displayLink : CADisplayLink = CADisplayLink.init(target: self, selector: #selector(ccDisplayAction(_ :)));
-        displayLink.preferredFramesPerSecond = 30;
+        if #available(iOS 10.0, *) {
+            displayLink.preferredFramesPerSecond = 30
+        } else {
+            displayLink.frameInterval = 2;
+        };
         displayLink.add(to: .current, forMode: .commonModes);
         self.displayLink = displayLink;
         return displayLink;

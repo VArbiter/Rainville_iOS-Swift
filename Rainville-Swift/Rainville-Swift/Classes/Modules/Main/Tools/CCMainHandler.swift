@@ -12,7 +12,7 @@ import AudioToolbox
 
 class CCMainHandler: NSObject {
     
-    class func ccIsHeadPhoneInsertWithHandler(_ closure : @escaping CCCommonClosure) -> Bool {
+    class func ccIsHeadPhoneInsertWithHandler(_ closure : CCCommonClosure) -> Bool {
         var isHeadphoneInsert : Bool = false;
         if __IPHONE_OS_VERSION_MAX_ALLOWED > Int32(7.0) {
             let route : AVAudioSessionRouteDescription = AVAudioSession.sharedInstance().currentRoute;
@@ -35,7 +35,7 @@ class CCMainHandler: NSObject {
         return isHeadphoneInsert;
     }
     
-    class func ccIsMuteEnabledWithHandler(_ closure : @escaping CCCommonClosure) -> Bool {
+    class func ccIsMuteEnabledWithHandler(_ closure : CCCommonClosure) -> Bool {
         var isMuteEnabled : Bool = false;
         if __IPHONE_OS_VERSION_MAX_ALLOWED > Int32(7.0) {
 //TODO: 检测 7.0 以上静音 .
