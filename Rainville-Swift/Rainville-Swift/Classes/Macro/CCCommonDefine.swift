@@ -101,7 +101,3 @@ func CC_Debug_Closure(_ closure : @escaping () -> Void) {
 func ccLocalizeString(_ string : String , _ : String) -> String {
     return NSLocalizedString(string, comment: "");
 }
-
-public struct CCCommonDefine {
-    
-}
