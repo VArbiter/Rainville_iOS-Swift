@@ -70,8 +70,8 @@ func _CC_VERSION_() -> String{
     return ccLocalizeString("_CC_VERSION_", "");
 }
 
-func _CC_ARRAY_ITEM_() -> Array<Any>{
+func _CC_ARRAY_ITEM_() -> [Any]{
     let stringFileName : String = (_CC_LANGUAGE_() == "简体中文") ? "ArrayItem_CH" : "ArrayItem_EN" ;
     let stringFilePath : String = Bundle.main.path(forResource: stringFileName, ofType: "plist")!;
-    return NSArray.init(contentsOfFile: stringFilePath) as! Array<Any>;
+    return NSArray.init(contentsOfFile: stringFilePath) as! [Any];
 }

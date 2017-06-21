@@ -33,15 +33,15 @@ class CCAudioHandler: NSObject {
     private var displayLink : CADisplayLink? ;
     private var timer : DispatchSourceTimer! ;
     private var intCountTime : Int = 0;
-    private var arrayVolume : Array<Float>? ;
-    private var arrayAudioPlayer : Array<AVAudioPlayer> = [];
-    private var arrayVolumeFrameValue : Array<Float>?;
+    private var arrayVolume : [Float]? ;
+    private var arrayAudioPlayer : [AVAudioPlayer] = [];
+    private var arrayVolumeFrameValue : [Float]?;
     private var option : CCPlayOption = CCPlayOption.pause;
     private var closure : (() -> Void)? ;
     private var intDisplayCount : Int = 0 ;
     
 //MARK: - Public
-    func ccSetAudioPlayerWithVolumeArray(_ arrayVolume : Array<Float>? , _ closure : @escaping () -> Void) {
+    func ccSetAudioPlayerWithVolumeArray(_ arrayVolume : [Float]? , _ closure : @escaping () -> Void) {
         guard (arrayVolume != nil) else {
             return;
         }

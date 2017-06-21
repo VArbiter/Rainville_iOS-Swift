@@ -20,7 +20,7 @@ class CCCountDownView: UIView , UIPickerViewDelegate , UIPickerViewDataSource {
     @IBOutlet private weak var labelLeft: UILabel!
     @IBOutlet private weak var labelRight: UILabel!
     
-    private var array : Array<Int>!;
+    private var array : [Int]!;
     
     class func initFromNib() -> CCCountDownView? {
         let viewCountDown : CCCountDownView? = Bundle.main.loadNibNamed("CCCountDownView", owner: nil, options: nil)?.first as? CCCountDownView;

@@ -9,53 +9,53 @@
 import Foundation
 
 func ccDefaultAudioSet () -> Dictionary<String, Any> {
-    let _CC_FAIRY_RAIN_ : Array <Float> = Array <Float>([0.0,0.0,0.0,0.0,0.1,0.2,0.3,0.4,0.5,0.6]);
+    let _CC_FAIRY_RAIN_ : [Float] = [0.0,0.0,0.0,0.0,0.1,0.2,0.3,0.4,0.5,0.6];
     
-    let _CC_BEDROOM_ : Array <Float> = Array <Float>([0.0,0.0,0.0,0.0,0.1,0.2,0.3,0.2,0.1,0.0]);
+    let _CC_BEDROOM_ : [Float] = [0.0,0.0,0.0,0.0,0.1,0.2,0.3,0.2,0.1,0.0];
     
-    let _CC_UNDER_THE_PORCH_ : Array <Float> = Array <Float>([0.0,0.3,0.25,0.25,0.3,0.25,0.2,0.15,0.1,0.0]);
+    let _CC_UNDER_THE_PORCH_ : [Float] = [0.0,0.3,0.25,0.25,0.3,0.25,0.2,0.15,0.1,0.0];
     
-    let _CC_DISTANT_STORM_ : Array <Float> = Array <Float>([0.7,0.6,0.5,0.4,0.3,0.2,0.2,0.3,0.2,0.1]);
+    let _CC_DISTANT_STORM_ : [Float] = [0.7,0.6,0.5,0.4,0.3,0.2,0.2,0.3,0.2,0.1];
     
-    let _CC_GETTING_WET_ : Array <Float> = Array <Float> ([0.7,0.5,0.2,0.35,0.55,0.35,0.3,0.5,0.2,0.2]);
+    let _CC_GETTING_WET_ : [Float] = [0.7,0.5,0.2,0.35,0.55,0.35,0.3,0.5,0.2,0.2];
     
-    let _CC_ONLY_RUMBLE_ : Array <Float> = Array <Float>([0.7,0.5,0.15,0.15,0.15,0.15,0.1,0.1,0.0,0.0]);
-    
-    
-    let _CC_UNDER_THE_LEAVES_ : Array <Float> = Array <Float>([0.3,0.3,0.0,0.0,0.0,0.3,0.0,0.0,0.1,0.2]);
-    
-    let _CC_DARK_RAIN_ : Array <Float> = Array <Float>([0.0,0.5,0.4,0.3,0.2,0.0,0.0,0.1,0.1,0.0]);
-    
-    let _CC_JUNGLE_LODGE_ : Array <Float> = Array <Float>([0.7,0.0,0.2,0.0,0.25,0.0,0.25,0.0,0.2,0.0]);
-    
-    let _CC_BROWN_NOISE_ : Array <Float> = Array <Float>([0.65,0.6,0.55,0.5,0.45,0.4,0.35,0.3,0.25,0.2]);
-    
-    let _CC_PINK_NOISE_ : Array <Float> = Array <Float>([0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3]);
-    
-    let _CC_WHITE_NOISE_ : Array <Float> = Array <Float>([0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65]);
-    
-    let _CC_GREY_NOISE_ : Array <Float> = Array <Float>([0.5,0.45,0.4,0.3,0.3,0.3,0.25,0.25,0.3,0.35]);
+    let _CC_ONLY_RUMBLE_ : [Float] = [0.7,0.5,0.15,0.15,0.15,0.15,0.1,0.1,0.0,0.0];
     
     
-    let _CC_60_HZ_ : Array <Float> = Array <Float>([0.4,0.5,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0]);
+    let _CC_UNDER_THE_LEAVES_ : [Float] = [0.3,0.3,0.0,0.0,0.0,0.3,0.0,0.0,0.1,0.2];
     
-    let _CC_125_HZ_ : Array <Float> = Array <Float>([0.0,0.4,0.5,0.4,0.0,0.0,0.0,0.0,0.0,0.0]);
+    let _CC_DARK_RAIN_ : [Float] = [0.0,0.5,0.4,0.3,0.2,0.0,0.0,0.1,0.1,0.0];
     
-    let _CC_250_HZ_ : Array <Float> = Array <Float>([0.0,0.0,0.4,0.5,0.4,0.0,0.0,0.0,0.0,0.0]);
+    let _CC_JUNGLE_LODGE_ : [Float] = [0.7,0.0,0.2,0.0,0.25,0.0,0.25,0.0,0.2,0.0];
     
-    let _CC_500_HZ_ : Array <Float> = Array <Float>([0.0,0.0,0.0,0.4,0.5,0.4,0.0,0.0,0.0,0.0]);
+    let _CC_BROWN_NOISE_ : [Float] = [0.65,0.6,0.55,0.5,0.45,0.4,0.35,0.3,0.25,0.2];
     
-    let _CC_1K_HZ_ : Array <Float> = Array <Float>([0.0,0.0,0.0,0.0,0.4,0.5,0.4,0.0,0.0,0.0]);
+    let _CC_PINK_NOISE_ : [Float] = [0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3];
     
-    let _CC_2K_HZ_ : Array <Float> = Array <Float>([0.0,0.0,0.0,0.0,0.0,0.4,0.5,0.4,0.0,0.0]);
+    let _CC_WHITE_NOISE_ : [Float] = [0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65];
     
-    let _CC_4K_HZ_ : Array <Float> = Array <Float>([0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.5,0.4,0.0]);
+    let _CC_GREY_NOISE_ : [Float] = [0.5,0.45,0.4,0.3,0.3,0.3,0.25,0.25,0.3,0.35];
     
-    let _CC_8K_HZ_ : Array <Float> = Array <Float>([0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.5,0.6]);
     
-    let _CC_DEFAULT_PRESET_ : Array <Float> = _CC_PINK_NOISE_;
+    let _CC_60_HZ_ : [Float] = [0.4,0.5,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0];
     
-    let array : Array <String> = _CC_ARRAY_ITEM_() as! Array<String>;
+    let _CC_125_HZ_ : [Float] = [0.0,0.4,0.5,0.4,0.0,0.0,0.0,0.0,0.0,0.0];
+    
+    let _CC_250_HZ_ : [Float] = [0.0,0.0,0.4,0.5,0.4,0.0,0.0,0.0,0.0,0.0];
+    
+    let _CC_500_HZ_ : [Float] = [0.0,0.0,0.0,0.4,0.5,0.4,0.0,0.0,0.0,0.0];
+    
+    let _CC_1K_HZ_ : [Float] = [0.0,0.0,0.0,0.0,0.4,0.5,0.4,0.0,0.0,0.0];
+    
+    let _CC_2K_HZ_ : [Float] = [0.0,0.0,0.0,0.0,0.0,0.4,0.5,0.4,0.0,0.0];
+    
+    let _CC_4K_HZ_ : [Float] = [0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.5,0.4,0.0];
+    
+    let _CC_8K_HZ_ : [Float] = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4,0.5,0.6];
+    
+    let _CC_DEFAULT_PRESET_ : [Float] = _CC_PINK_NOISE_;
+    
+    let array : [String] = _CC_ARRAY_ITEM_() as! [String];
     let dictionary : Dictionary = Dictionary.init(dictionaryLiteral: (array[0] , _CC_DEFAULT_PRESET_),
         (array[1] , _CC_FAIRY_RAIN_),
         (array[2] , _CC_BEDROOM_),
@@ -82,8 +82,8 @@ func ccDefaultAudioSet () -> Dictionary<String, Any> {
 }
 
 /// url object
-func ccAudioFilePath () -> Array<URL> {
-    var array : Array<URL> = [];
+func ccAudioFilePath () -> [URL] {
+    var array : [URL] = [];
     for i in 0...9 {
         let stringFilePath : String = Bundle.main.path(forResource: "_\(i)", ofType: "wav")!;
         if let url = ccURL(stringFilePath, false) {
